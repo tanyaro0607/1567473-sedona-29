@@ -1,0 +1,319 @@
+/*Variables */
+
+:root {
+	--basic-white:#FFFFFF;
+	--basic-black:#000000;
+	--basic-extra-dark:#333333; /*текст*/
+	--basic-neutral:#EEEEEE; /*часть фона*/
+	--basic-blue-light:#81B3D2;
+	--basic-grey-light:rgba(255, 255, 255, 0.9); /*для footer*/
+  --basic-grey:#666666;/*текст для рейтинг на внутренней стр.*/
+
+/*Button*/
+
+  /*для блока "Поиск гостиниц в Седоне и коричневых кнопок*/
+  --basic-brown-light:#766357; /*покой*/
+  --basic-brown:#604E43;/*наведение*/
+  --basic-brown-dark:#503E33;/*нажатие*/
+  --brown-ultra-light:#F2F2F2; /*окно подложка покой + рейтинг*/
+  --brown-ultra-lighten:#EBEBEB; /*окно подложка наведение*/
+
+/*для голубых кнопок*/
+--basic-blue-light:#81B3D2;
+--basic-blue:#669EC0;
+--basic-blue-dark:#5496BD;
+}
+
+body {
+  min-width: 1200px;
+  margin: 0;
+  padding: 0;
+  font-family: "PT Sans", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  color: var(--basic-black);
+  text-transform: uppercase;
+  background-color: var(--basic-white);
+  background-image: url(".png"); /*подключим картинку*/
+  background-position: absolute;
+  background-repeat: no-repeat;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*Main-navigation*/
+
+.main-navigation {
+ font-size: 14px;
+ line-height: 26px;
+ font-weight: 700;
+ color: var(--basic-black);
+ background-color: transparent;
+}
+
+.main-navigation-wrapper {
+  background-color: var(--basic-white);
+}
+
+
+/* User navigation */
+
+
+.site-navigation a {
+  color: var(--basic-black);
+}
+
+.site-navigation a:hover,
+.site-navigation a:focus {
+  background-color: var(--basic-white);
+}
+
+.site-navigation {
+  list-style: none;
+}
+
+.site-navigation-current a:not([href]) {
+  background-color: var(--basic-white);
+}
+
+
+/*container */
+
+.container {
+  text-align: center; }
+
+/*Subtitle*/
+
+.subtitle {
+  text-align: center;
+  line-height: 26px;
+}
+
+.subtitle h2 {
+  font-size: 21px;
+}
+
+
+/* Features */
+
+.features-list,
+.tourism-list {
+ list-style: none;
+}
+
+.feature-item,
+.tourism-item {
+  text-align: center;
+}
+
+.feature-item h3, 
+.tourism-item h3 {
+  font-size: 21px;
+  line-height: 21px;
+}
+
+.tourism-item p {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  } /*для р нужно задавать отдельные параменты?(они должны быть стандартные, как для body).без них шрифт, как у заголовка, или где-то ошибка?*/
+
+.feature-item-content {
+  background-color: var(--basic-neutral);
+}
+
+.feature-item-one,
+.feature-item-two {
+   background-color: var(--basic-blue-light);
+   color: var(--basic-white);
+}
+
+/*button общие критерии*/
+.button{
+  font: inherit;
+  text-align: center;
+  color: var(--basic-white);
+  vertical-align: middle;
+  text-transform: uppercase;
+  background-color: var(--basic-blue-light);
+  border: none;
+  }
+/* footer*/
+
+footer {
+  background-color: var(--basic-grey-light);
+}
+
+/*contacts-phone*/
+
+.contacts-phone {
+  color: inherit;
+}
+
+
+.footer-contacts {
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+
+/*footer-social соц сети*/
+
+.footer-social {
+  text-align: center;}
+
+.footer-social ul {
+  list-style: none;
+}
+
+/* Social button */
+
+.social-button {
+  background-color: var(--basic-blue-light);
+}
+
+/*три пунката ниже - наведение со сменой цветов, не работает, что не так сделала?*/
+.social-button:hover {
+  background-color:var(--basic-blue-light);
+}
+.socilal-button:focus {
+  background-color: var(--basic-blue);
+}
+.socilal-button:active {
+  background-color: var(--basic-blue-dark);
+}
+
+.social-button.disabled,
+.social-button.button:disabled {
+  cursor: default;
+  opacity: 0.5;
+  background-color: var(--basic-blue-light);
+} 
+
+/*footer-copyright*/
+
+.footer-copyright {
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+/*как здесь сделать замену цветов при наведении? там только инонка или иконка+текст...на макете не определяет цвет текста...не понимаю*/
+.footer-copyright:hover {
+  color:;
+}
+.footer-copyright:focus {
+  color:;
+}
+.footer-copyright:active {
+  color:;
+}
+
+/*Модальные окна*/
+
+.modal {
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+}
+
+
+/*страница 2 Внутренняя */
+
+
+/*total-search НАЙДЕНО:3*/
+.total-search h4,
+.sort-list {
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;}
+
+  .sopt-item-prise {
+    color: var(--basic-blue-light);
+  }
+
+  .sopt-item {
+  list-style: none;
+}
+
+
+/* results-searc Найденные варианты*/
+
+.total-search h3,
+.results-search h4 {
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+.results-search ul {
+  list-style: none;
+}
+
+.results-search {
+  color: inherit;
+}
+
+.results-search p {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;}
+
+  .details {
+    background-color: var(--basic-blue-light);
+    color: var(--basic-white);
+    text-align: center;
+    width: 110px;
+    height: 27px;
+  }
+
+  .booking{
+   background-color: var(--basic-brown-light);
+   color: var(--basic-white);
+   text-align: center;
+   width: 142px;
+   height: 27px;
+  }
+
+  .rating {
+   background-color: var(--brown-ultra-light);
+   color: var(--basic-grey);
+   text-transform: uppercase;
+   width: 110px;
+   height: 27px;
+   text-align: center;
+  }
+
+
+.hotels a,
+.total-search a {
+  color: var(--basic-black);
+}
+
+.hotels a:hover,
+.hotels a:focus,
+.total-search a:hover,
+.total-search a:focus {
+  background-color: var(--basic-white);
+}
+
+.hotels,
+.total-search {
+  list-style: none;
+}
+a.hotel-name h4 /*тут больше двух селекторов, как сделать лучше?*/{
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 700;
+}
+
+
