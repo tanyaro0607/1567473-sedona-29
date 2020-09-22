@@ -141,10 +141,8 @@ img {
 .button{
   font: inherit;
   text-align: center;
-  color: var(--basic-white);
   vertical-align: middle;
   text-transform: uppercase;
-  background-color: var(--basic-blue-light);
   border: none;
   }
 /* footer*/
@@ -180,6 +178,7 @@ footer {
 
 .social-button {
   background-color: var(--basic-blue-light);
+  color: var(--basic-white);
 }
 
 /*три пунката ниже - наведение со сменой цветов, не работает, что не так сделала?*/
@@ -228,6 +227,12 @@ footer {
 
 
 /*страница 2 Внутренняя */
+
+/*fieldset*/
+fieldset {
+  color: var(--basic-white);
+  background-color: grey;
+}
 
 
 /*total-search НАЙДЕНО:3*/
