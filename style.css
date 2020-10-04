@@ -51,9 +51,39 @@ img {
   height: auto;
 }
 
+/*Main-header*/
+
+.main-header {
+ outline: 5px solid rgba(0, 255, 0, 0.3);
+ outline-offset: -5px;
+ width: 1200px;
+ justify-self: center;
+}
+
+.main-header-logo {
+ outline: 5px solid rgba(255, 0, 0, 0.3);
+ outline-offset: -5px;
+ justify-self: center;
+  /* order:0; - значение по умолчанию по умолчанию, расположение логотипа*/
+}
+
+.main-header-bar {
+  background-color: var(--basic-white);
+}
+
 /*Main-navigation*/
 
+.main-navigation-wrapper {
+ display: grid;
+ grid-template-columns: max-content;
+ background-color: var(--basic-white);
+ width: 1200px;
+ margin: 0 auto;
+ padding: 0;
+}
+
 .main-navigation {
+ display: grid;
  font-size: 14px;
  line-height: 26px;
  font-weight: 700;
@@ -80,6 +110,10 @@ img {
 
 .site-navigation {
   list-style: none;
+  margin: 0;
+  padding: 0;
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
 }
 
 .site-navigation-current a:not([href]) {
@@ -90,7 +124,11 @@ img {
 /*container */
 
 .container {
-  text-align: center; }
+  text-align: center; 
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
 
 /*Subtitle*/
 
@@ -106,6 +144,11 @@ img {
 
 /* Features */
 
+
+.features {
+  outline: 5px solid rgba(255, 0, 0 , 0.3);
+}
+
 .features-list,
 .tourism-list {
  list-style: none;
@@ -116,6 +159,10 @@ img {
   text-align: center;
 }
 
+.features-list {
+ margin: 0;
+ padding: 0;
+}
 .section-title {
   font-size: 21px;
   line-height: 21px;
@@ -142,9 +189,15 @@ img {
 /* footer*/
 
 .main-footer {
+  outline: 5px solid rgba(255, 0, 0, 0.7);
+  outline-offset: -5px;
   background-color: var(--basic-grey-light-neutral);
   color: var(--basic-black);
   line-height: 26px;
+  outline: 5px solid rgba(255, 0, 0, 0.7);
+  outline-offset: -5px;
+  width: 1200px;
+  justify-self: center;
 }
 
 /*contacts-phone*/
@@ -312,4 +365,97 @@ color: var(--basic-black);
 }
 .hotel-name:active {
  color:var(--basic-grey-light); /*на макете нарисован серый, но цвет указан черный. какой правильный цвет?*/
+}
+
+/*Сетка на гридах*/
+.page {
+  height: 100%;
+}
+
+.page-body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+}
+
+
+.tourism-item,
+.feature-item {
+  text-align: center;
+  outline: 5px solid rgba(0, 255, 255 , 0.3);
+  outline-offset: -5px;
+}
+
+.tourism-list,
+.feature-item-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding: 30px;
+}
+
+.tourism-item p,
+.section-title p {
+  margin: 0 20px;
+  padding: 20px;
+}
+
+
+.feature-item-one {
+ display: grid;
+ grid-template-columns: 1fr 2fr;
+ outline: 5px solid rgba(255, 0, 0, 0.7);
+ margin:0;
+ padding: 0;
+}
+
+.feature-item-one-photo{
+  text-align: right;
+  height: 256px;
+}
+
+.feature-item-two {
+ display: grid;
+ grid-template-columns: 2fr 1fr;
+ outline: 5px solid rgba(255, 0, 0, 0.7);
+ margin:0;
+ padding: 0;
+}
+
+.feature-item-two-photo{
+  text-align: left;
+  height: 256px;
+}
+.feature-item-two-content{
+  text-align: right;
+  order:1;
+}
+
+.main-footer {
+ outline: 5px solid rgba(255, 0, 0, 0.3);
+ outline-offset: -5px;
+}
+
+.main-footer .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-contacts {
+  outline: 5px solid rgba(0, 255, 255, 0.7);
+  outline-offset: -5px;
+}
+
+.footer-social {
+ text-align: center;
+ outline: 5px solid rgba(0, 255, 0, 0.7);
+ outline-offset: -5px;
+}
+
+ .footer-copyright{
+ outline: 5px solid rgba(255, 0, 255, 0.7);
+ outline-offset: -5px;
 }
