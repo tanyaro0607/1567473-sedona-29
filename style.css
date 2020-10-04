@@ -91,10 +91,6 @@ img {
  background-color: transparent;
 }
 
-.main-navigation-wrapper {
-  background-color: var(--basic-white);
-}
-
 
 /* User navigation */
 
@@ -121,15 +117,17 @@ img {
 }
 
 
-/*container */
+/*container main */
 
 .container {
-  text-align: center; 
   width: 1200px;
   margin: 0 auto;
   padding: 0;
 }
 
+.page-index {
+text-align: center; 
+}
 /*Subtitle*/
 
 .subtitle {
@@ -265,10 +263,13 @@ color: var(--basic-black);
 
 /*страница 2 Внутренняя */
 
-/*fieldset*/
-fieldset {
+/*filter-search*/
+.filter-search {
   color: var(--basic-white);
+  background-image: url("img/background.png");
   background-color: grey; /*(временно!)место картинки*/ 
+  width: 1200px;
+  justify-self: center; /*почему не сдвигается в центр?*/
 }
 
 
@@ -441,7 +442,7 @@ color: var(--basic-black);
 
 .main-footer .container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr; 
 }
 
 .footer-contacts {
@@ -459,3 +460,62 @@ color: var(--basic-black);
  outline: 5px solid rgba(255, 0, 255, 0.7);
  outline-offset: -5px;
 }
+
+/*Сетка на грилах для внутр страницы*/
+
+.page-hotels {
+  display: grid;
+  outline: 5px solid rgba(255, 0, 0, 0.7);
+  outline-offset: -5px;
+}
+.filter-criterias {
+ outline: 5px solid rgba(0, 255, 0, 0.3);
+ outline-offset: -5px;
+}
+
+.filter {
+display: grid;
+grid-template-columns: 1fr 1fr 2fr;
+}
+
+.filter-criterias-price {
+  justify-self: center;
+}
+
+.results-search
+/*как этот блок правильно разметить, тут тоже гриды?*/
+ {
+ outline: 5px solid rgba(0, 255, 0, 0.3);
+ outline-offset: -5px;
+}
+
+.hotels-list   {
+outline: 5px solid rgba(0, 0, 255, 0.3);
+outline-offset: -5px;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+}
+
+.stars {
+  text-align: right;
+}
+
+img.hotel-photo{
+text-align: left;
+}
+
+.sopt-item {
+outline: 5px solid rgba(0, 0, 255, 0.3);
+ outline-offset: -5px;
+}
+
+.sorting
+{
+  grid-column: 1 / -1;
+  margin-bottom: 40px;
+  outline: 5px solid rgba(0, 0, 255, 0.7);
+  outline-offset: -5px;
+}
+
+
+
