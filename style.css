@@ -63,7 +63,6 @@ img {
 .main-header-logo {
  outline: 5px solid rgba(255, 0, 0, 0.3);
  outline-offset: -5px;
- justify-self: center;
   /* order:0; - значение по умолчанию по умолчанию, расположение логотипа*/
 }
 
@@ -133,12 +132,18 @@ text-align: center;
 .subtitle {
   text-align: center;
   line-height: 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 272px;
+  outline: 5px solid rgba(0, 0, 255, 0.3);
+  outline-offset: -5px;
 }
 
-.subtitle h2 {
+.subtitle-title {
+  margin: 42.5px 365px 16.5px;
   font-size: 21px;
 }
-
 
 /* Features */
 
@@ -266,10 +271,10 @@ color: var(--basic-black);
 /*filter-search*/
 .filter-search {
   color: var(--basic-white);
-  background-image: url("img/background.png");
+  background: url("img/background.png");
   background-color: grey; /*(временно!)место картинки*/ 
   width: 1200px;
-  justify-self: center; /*почему не сдвигается в центр?*/
+  justify-self: center; 
 }
 
 
@@ -313,13 +318,17 @@ color: var(--basic-black);
 
 .hotel-link {
   color: var(--basic-white);
-  text-align: center;
   height: 27px;
-  }
+  padding: 3px 17px 3px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .details {
   background-color: var(--basic-blue-light);
   width: 110px;
+  margin-right: 5px; 
   }
 
 .booking{
@@ -463,7 +472,7 @@ color: var(--basic-black);
 
 /*Сетка на грилах для внутр страницы*/
 
-.page-hotels {
+.hotels {
   display: grid;
   outline: 5px solid rgba(255, 0, 0, 0.7);
   outline-offset: -5px;
@@ -492,7 +501,7 @@ grid-template-columns: 1fr 1fr 2fr;
 .hotels-list   {
 outline: 5px solid rgba(0, 0, 255, 0.3);
 outline-offset: -5px;
-display: grid;
+display: flex;
 grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -517,5 +526,80 @@ outline: 5px solid rgba(0, 0, 255, 0.3);
   outline-offset: -5px;
 }
 
+/*Верстка на флексах*/
 
+a.hotel-link {
+  color: var(--basic-white);
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.stars {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actions {
+  display: flex;
+}
+
+.filter-button {
+  background-color: transparent;
+  color: var(--basic-white);
+  border: 1px solid var(--basic-white);
+  height: 27px;
+}
+
+.sorting  {
+  display: flex;
+  align-items: center;
+}
+
+.sort-list {
+  display: flex;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 256px;
+}
+
+.main-navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.site-navigation {
+display: flex;
+width: 1200px;
+justify-content: space-around;
+}
+
+.application {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.hotel-name {
+ order: 2;
+}
+
+.hotel-type {
+  display: flex;
+}
+
+.test {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
