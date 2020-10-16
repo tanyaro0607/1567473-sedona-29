@@ -9,6 +9,7 @@
 	--basic-grey-light-neutral:rgba(255, 255, 255, 0.9); /*фон для footer*/
   --basic-grey:#666666;/*текст для рейтинг на внутренней стр.*/
   --basic-grey-light:#BDBBBC; /*нажатие для footer-copyright*/
+  --basic-grey-lighten:#E5E5E5;/* border-bottom для 2 стр*/ 
 
 /*Button*/
 
@@ -49,6 +50,19 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 /*Main-header*/
@@ -93,14 +107,41 @@ img {
 
 /* User navigation */
 
+.main-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.site-navigation {
+display: flex;
+flex-wrap: wrap;
+width: 1200px;
+justify-content: space-around;
+}
 
 .site-navigation a {
   color: var(--basic-black);
+  display: block;
 }
 
-.site-navigation a:hover,
-.site-navigation a:focus {
-  background-color: var(--basic-white);
+.site-navigation-item-hotels {
+  color: var(--basic-brown-light);
+  }
+
+  .site-navigation-item {
+  color: var(--basic-black);
+}
+
+  .site-navigation-item a:hover {
+  color: var(--basic-blue-light); 
+}
+  .site-navigation-item a:active {
+  color:var(--basic-black);
+  opacity: 0.3;
 }
 
 .site-navigation {
@@ -133,6 +174,7 @@ text-align: center;
   text-align: center;
   line-height: 26px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   height: 272px;
@@ -160,6 +202,14 @@ text-align: center;
 .feature-item,
 .tourism-item {
   text-align: center;
+}
+
+.feature-item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  height: 256px;
 }
 
 .features-list {
@@ -213,23 +263,39 @@ text-align: center;
 .footer-contacts {
   font-size: 21px;
   font-weight: 700;
+  text-align: center;
 }
 
 
 /*footer-social соц сети*/
 
-.footer-social {
-  text-align: center;}
-
 .footer-social ul {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.footer-social {
+ text-align: center;
+ outline: 5px solid rgba(0, 255, 0, 0.7);
+ outline-offset: -5px;
 }
 
 /* Social button */
 
 .social-button {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 48px;
   background-color: var(--basic-blue-light);
-  color: var(--basic-white);
+  color: inherit;
+  margin: 36px 6px;
 }
 
 .social-button:hover {
@@ -237,6 +303,10 @@ text-align: center;
 }
 .social-button:active {
   background-color: var(--basic-blue-dark);
+}
+
+.social-button:active path {
+  opacity: 0.3;
 }
 
 /*footer-copyright*/
@@ -251,11 +321,11 @@ list-style: none;
 color: var(--basic-black);
 }
 
-.copyright:hover {
- color: var(--basic-blue-light);
+.copyright:hover path {
+ fill: var(--basic-blue-light);
 }
-.copyright:active {
- color:var(--basic-grey-light);
+.copyright:active path {
+ fill:var(--basic-grey-light);
 }
 
 /*Модальные окна*/
@@ -272,25 +342,155 @@ color: var(--basic-black);
 .filter-search {
   color: var(--basic-white);
   background: url("img/background.png");
-  background-color: grey; /*(временно!)место картинки*/ 
   width: 1200px;
-  justify-self: center; 
+  height:217;
 }
 
+.filter-list {
+list-style: none;
+}
+
+.price-controls {
+border: 2px solid var(--basic-white);
+border-radius: 2px;
+height:36px;
+width:317px;
+text-align: center;
+border-collapse: collapse;
+}
+
+.range-filter {
+  background-color: transparent;
+}
+.price-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.range-controls {
+  margin-top: 20px;
+  margin-bottom: 33px;
+  position: relative;
+ }
+
+.range-controls .scale {
+  height: 2px;
+  background: var(--basic-white);
+  opacity: 0.3;
+  margin: 0;
+  width: 316px;
+  }
+
+.range-controls .bar {
+  width: 248px;
+  height: 2px;
+  background:var(--basic-white);
+  opacity: 1; /*почему шкала не становится яркой, как сделать?*/
+  position: absolute;
+}
+
+.range-controls .toggle {
+  width: 3.82px;
+  height: 3.8px;
+  padding: 0;
+  border: 7.64px solid #ffffff;
+  background-color: #ababab;
+  border-radius: 50%;
+  box-shadow: 0 1.91px rgba(171, 171, 171, 0.3);
+  position: absolute;
+  top: -7px;
+  left: 0;
+}
+
+.range-controls .toggle-min {
+  left: 0px;
+}
+
+.range-controls .toggle-max {
+  left: 248px;
+}
+
+.demonstrate-controls {
+  margin-left: 84px;
+}
 
 /*total-search НАЙДЕНО:3*/
+
+.sorting  {
+  display: flex;
+  flex-wrap: wrap;
+  align-items:baseline;
+  margin: 0;
+  padding: 0;
+  outline: 5px solid rgba(0, 0, 255, 0.7);
+  outline-offset: -5px;
+}
+
+.sorting-bar {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1200px;
+  align-items:center; 
+  border-bottom: 1px solid var(--basic-grey-lighten);
+}
+
+.arrows {
+  outline: 5px solid rgba(255, 0, 0, 0.5);
+  outline-offset: -5px;
+  align-self: right;
+  margin-left: 503px;
+}
+
+.sorting h3 {
+  margin: 29px 46px 31px 73px;
+}
+
+.sorting h4 {
+  margin:31px 40px 37px 0px ;
+}
+
+.sort-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+  position: relative;
+}
+.sort-item {
+  margin-right: 32px;
+}
+
 .total-search h4,
 .sort-list {
   font-size: 12px;
   line-height: 18px;
-  font-weight: 400;}
+  font-weight: 400;
+}
 
-  .sopt-item-price {
-    color: var(--basic-blue-light);
+.sort-list a {
+  color: var(--basic-black);
+  opacity: 0.3;
+}
+
+.sort-item-price {
+  color: var(--basic-blue-light);
+  opacity: 1;
   }
 
-  .sopt-item {
-  list-style: none;
+  .sort-item a {
+  color: var(--basic-black);
+  opacity: 0.3;
+}
+
+  .sort-item a:hover {
+  color: var(--basic-blue-light); 
+  opacity: 1;
+}
+  .sort-item a:active {
+  color:var(--basic-black);
+  opacity: 1;
 }
 
 
@@ -309,6 +509,8 @@ color: var(--basic-black);
 
 .results-search {
   color: inherit;
+  outline: 5px solid rgba(0, 255, 0, 0.3);
+  outline-offset: -5px;
 }
 
 .results-search p {
@@ -319,10 +521,12 @@ color: var(--basic-black);
 .hotel-link {
   color: var(--basic-white);
   height: 27px;
-  padding: 3px 17px 3px 16px;
-  display: flex;
   justify-content: center;
   align-items: center;
+  text-transform: uppercase;
+}
+.hotel-link a {
+padding: 3px 17px 3px 16px;
 }
 
 .details {
@@ -344,6 +548,11 @@ color: var(--basic-black);
   width: 110px;
   height: 27px;
   text-align: center;
+  align-self: flex-end;
+}
+
+  .rating p {
+  padding: 3px 12px 3px 15px;
   }
 
 
@@ -374,7 +583,8 @@ color: var(--basic-black);
  color: var(--basic-blue-light);
 }
 .hotel-name:active {
- color:var(--basic-grey-light); /*на макете нарисован серый, но цвет указан черный. какой правильный цвет?*/
+ color:var(--basic-black);
+ opacity: 0.3;
 }
 
 /*Сетка на гридах*/
@@ -459,58 +669,156 @@ color: var(--basic-black);
   outline-offset: -5px;
 }
 
-.footer-social {
- text-align: center;
- outline: 5px solid rgba(0, 255, 0, 0.7);
- outline-offset: -5px;
-}
-
  .footer-copyright{
  outline: 5px solid rgba(255, 0, 255, 0.7);
  outline-offset: -5px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.footer-copyright-text {
+ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 /*Сетка на грилах для внутр страницы*/
 
 .hotels {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
   outline: 5px solid rgba(255, 0, 0, 0.7);
   outline-offset: -5px;
 }
 .filter-criterias {
  outline: 5px solid rgba(0, 255, 0, 0.3);
  outline-offset: -5px;
+ flex-wrap: wrap;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ margin: 0;
+ padding: 0;
+border: none;
 }
 
 .filter {
-display: grid;
-grid-template-columns: 1fr 1fr 2fr;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+height: 217px;
+flex-wrap: wrap;
+}
+
+.filter ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  line-height: 18px;
+}
+
+.filter-option {
+  margin-bottom: 25px;
+}
+
+
+.filter-option label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-criterias-price legend {
+  margin-bottom: 10.5px;
+}
+
+.filter-criterias-infrastructure {
+  margin-left: 100px;
+}
+
+
+.filter-criterias-infrastructure legend {
+  margin-bottom: 24px;
+  margin-left: -40px;
+}
+
+.filter-criterias-house {
+  margin-right: 347px;
+  margin-left: 119px;
+}
+.filter-criterias-house legend {
+margin-bottom: 24px;
+margin-left: -40px;
 }
 
 .filter-criterias-price {
-  justify-self: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.results-search
-/*как этот блок правильно разметить, тут тоже гриды?*/
- {
- outline: 5px solid rgba(0, 255, 0, 0.3);
- outline-offset: -5px;
+
+
+.filter-criterias-price legend {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+
+.filter-button {
+  background-color: transparent;
+  color: var(--basic-white);
+  border: 1px solid var(--basic-white);
+  width: 137px;
+  height: 36px;
+  align-self: center;
+}
+
+
+.filter-input-checkbox:not(:checked) + label::before {
+  content: "";
+  position: absolute;
+  left: -46px;
+  top: 0;
+  width: 19px;
+  height: 19px;
+  border: 2px solid rgba(255, 255, 255, 1);
+  border-radius: 15%; /* или тут лучше svg вставить? */
+}
+
+.filter-input-checkbox:checked + label::before {
+  content: "";
+  position: absolute;
+  left: -46px;
+  top: 0;
+  width: 23px;
+  height: 23px;
+  background-image: url("img/border.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.filter-input-checkbox:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -42px;
+  width: 21.72px;
+  height: 16.76px;
+  background-image: url("img/tick.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .hotels-list   {
 outline: 5px solid rgba(0, 0, 255, 0.3);
 outline-offset: -5px;
 display: flex;
-grid-template-columns: 1fr 1fr 1fr;
-}
-
-.stars {
-  text-align: right;
-}
-
-img.hotel-photo{
-text-align: left;
+flex-direction: row;
+border-bottom: 1px solid var(--basic-grey-lighten);
+/*grid-template-columns: 1fr 1fr 1fr;*/
 }
 
 .sopt-item {
@@ -518,15 +826,49 @@ outline: 5px solid rgba(0, 0, 255, 0.3);
  outline-offset: -5px;
 }
 
-.sorting
-{
-  grid-column: 1 / -1;
-  margin-bottom: 40px;
-  outline: 5px solid rgba(0, 0, 255, 0.7);
-  outline-offset: -5px;
+.hotel-type {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-/*Верстка на флексах*/
+.hotel-photo {
+  margin-right: 24px;
+  order: -2;
+}
+
+.hotel-photo {
+margin-top: 30px;
+margin-bottom: 30px;
+}
+
+.hotel-info {
+margin-top: 23.5px;
+margin-bottom: 30px;
+}
+
+.hotel-prestige {
+margin-top: 29px;
+margin-bottom: 30px;
+margin-left: 522px;
+}
+
+.hotel-name h4 {
+  margin:0;
+  padding: 0;
+}
+
+.stars {
+  margin-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+}
 
 a.hotel-link {
   color: var(--basic-white);
@@ -536,70 +878,13 @@ a.hotel-link {
   text-align: center;
 }
 
-.stars {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.actions {
-  display: flex;
-}
-
-.filter-button {
-  background-color: transparent;
-  color: var(--basic-white);
-  border: 1px solid var(--basic-white);
-  height: 27px;
-}
-
-.sorting  {
-  display: flex;
-  align-items: center;
-}
-
-.sort-list {
-  display: flex;
-}
-
-.feature-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 256px;
-}
-
-.main-navigation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-.site-navigation {
-display: flex;
-width: 1200px;
-justify-content: space-around;
-}
-
-.application {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
 
-.hotel-name {
- order: 2;
-}
 
-.hotel-type {
-  display: flex;
-}
 
-.test {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
+
+
+
+
+
 
