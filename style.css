@@ -10,6 +10,7 @@
   --basic-grey:#666666;/*текст для рейтинг на внутренней стр.*/
   --basic-grey-light:#BDBBBC; /*нажатие для footer-copyright*/
   --basic-grey-lighten:#E5E5E5;/* border-bottom для 2 стр*/ 
+  --basic-grey-special:#CACACA; /*стрелки*/
 
 /*Button*/
 
@@ -68,8 +69,6 @@ img {
 /*Main-header*/
 
 .main-header {
- outline: 5px solid rgba(0, 255, 0, 0.3);
- outline-offset: -5px;
  width: 1200px;
  justify-self: center;
 }
@@ -148,8 +147,6 @@ justify-content: space-around;
   list-style: none;
   margin: 0;
   padding: 0;
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
 }
 
 .site-navigation-current a:not([href]) {
@@ -178,8 +175,6 @@ text-align: center;
   flex-direction: column;
   justify-content: center;
   height: 272px;
-  outline: 5px solid rgba(0, 0, 255, 0.3);
-  outline-offset: -5px;
 }
 
 .subtitle-title {
@@ -189,10 +184,6 @@ text-align: center;
 
 /* Features */
 
-
-.features {
-  outline: 5px solid rgba(255, 0, 0 , 0.3);
-}
 
 .features-list,
 .tourism-list {
@@ -242,13 +233,9 @@ text-align: center;
 /* footer*/
 
 .main-footer {
-  outline: 5px solid rgba(255, 0, 0, 0.7);
-  outline-offset: -5px;
   background-color: var(--basic-grey-light-neutral);
   color: var(--basic-black);
   line-height: 26px;
-  outline: 5px solid rgba(255, 0, 0, 0.7);
-  outline-offset: -5px;
   width: 1200px;
   justify-self: center;
 }
@@ -278,11 +265,6 @@ text-align: center;
   padding: 0;
 }
 
-.footer-social {
- text-align: center;
- outline: 5px solid rgba(0, 255, 0, 0.7);
- outline-offset: -5px;
-}
 
 /* Social button */
 
@@ -423,8 +405,6 @@ border-collapse: collapse;
   align-items:baseline;
   margin: 0;
   padding: 0;
-  outline: 5px solid rgba(0, 0, 255, 0.7);
-  outline-offset: -5px;
 }
 
 .sorting-bar {
@@ -433,17 +413,15 @@ border-collapse: collapse;
   width: 1200px;
   align-items:center; 
   border-bottom: 1px solid var(--basic-grey-lighten);
+  margin: 0;
+  padding: 0;
 }
 
-.arrows {
-  outline: 5px solid rgba(255, 0, 0, 0.5);
-  outline-offset: -5px;
-  align-self: right;
-  margin-left: 503px;
-}
+
 
 .sorting h3 {
   margin: 29px 46px 31px 73px;
+  padding: 0;
 }
 
 .sorting h4 {
@@ -458,8 +436,12 @@ border-collapse: collapse;
   flex-wrap: wrap;
   position: relative;
 }
-.sort-item {
+.sort-item:not(:last-child) {
   margin-right: 32px;
+}
+
+.arrows {
+  margin-left: 503px;
 }
 
 .total-search h4,
@@ -493,6 +475,32 @@ border-collapse: collapse;
   opacity: 1;
 }
 
+.button-arrow {
+  background-color: var(--basic-white);
+  padding:0;
+  border:none;
+}
+
+.button-arrow-up {
+  color: var(--basic-grey-special);
+  margin-right: 12px;
+}
+
+.button-arrow:hover path {
+  fill: var(--basic-black);
+  }
+
+.button-arrow:active path{
+  fill: var(--basic-blue-light);
+  }
+
+.button-arrow-down {
+ color: var(--basic-blue-light);
+}
+
+
+
+
 
 /* results-searc Найденные варианты*/
 
@@ -504,13 +512,12 @@ border-collapse: collapse;
 }
 
 .results-search ul {
+  padding: 0;
   list-style: none;
 }
 
 .results-search {
   color: inherit;
-  outline: 5px solid rgba(0, 255, 0, 0.3);
-  outline-offset: -5px;
 }
 
 .results-search p {
@@ -520,26 +527,50 @@ border-collapse: collapse;
 
 .hotel-link {
   color: var(--basic-white);
-  height: 27px;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
 }
-.hotel-link a {
-padding: 3px 17px 3px 16px;
+
+a.hotel-link {
+  display: inline-block;
+  padding: 0;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+  padding: 3px 17px 3px 16px;
 }
 
 .details {
   background-color: var(--basic-blue-light);
-  width: 110px;
   margin-right: 5px; 
   }
 
+
+ .details:hover {
+  background-color:#669EC0;
+  opacity: 1;
+}
+
+  .details:active {
+  background-color:#669EC0;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+
 .booking{
   background-color: var(--basic-brown-light);
-  width: 142px;
   }
 
+ .booking:hover {
+  background-color:#604E43;
+  opacity: 1;
+}
+
+  .booking:active {
+  background-color:#503E33;
+  color: rgba(255, 255, 255, 0.3);
+}
 
 .rating {
   background-color: var(--brown-ultra-light);
@@ -564,6 +595,8 @@ padding: 3px 17px 3px 16px;
 .total-search
 .hotel {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 /*hotel-name*/
@@ -603,8 +636,6 @@ color: var(--basic-black);
 .tourism-item,
 .feature-item {
   text-align: center;
-  outline: 5px solid rgba(0, 255, 255 , 0.3);
-  outline-offset: -5px;
 }
 
 .tourism-list,
@@ -627,7 +658,6 @@ color: var(--basic-black);
 .feature-item-one {
  display: grid;
  grid-template-columns: 1fr 2fr;
- outline: 5px solid rgba(255, 0, 0, 0.7);
  margin:0;
  padding: 0;
 }
@@ -640,7 +670,6 @@ color: var(--basic-black);
 .feature-item-two {
  display: grid;
  grid-template-columns: 2fr 1fr;
- outline: 5px solid rgba(255, 0, 0, 0.7);
  margin:0;
  padding: 0;
 }
@@ -654,24 +683,14 @@ color: var(--basic-black);
   order:1;
 }
 
-.main-footer {
- outline: 5px solid rgba(255, 0, 0, 0.3);
- outline-offset: -5px;
-}
 
 .main-footer .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; 
 }
 
-.footer-contacts {
-  outline: 5px solid rgba(0, 255, 255, 0.7);
-  outline-offset: -5px;
-}
 
  .footer-copyright{
- outline: 5px solid rgba(255, 0, 255, 0.7);
- outline-offset: -5px;
  display: flex;
  align-items: center;
  justify-content: center;
@@ -679,6 +698,7 @@ color: var(--basic-black);
 
 .footer-copyright-text {
  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+ margin-right: 8.2px;
 }
 
 /*Сетка на грилах для внутр страницы*/
@@ -688,12 +708,9 @@ color: var(--basic-black);
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: flex-start;
-  outline: 5px solid rgba(255, 0, 0, 0.7);
-  outline-offset: -5px;
 }
+
 .filter-criterias {
- outline: 5px solid rgba(0, 255, 0, 0.3);
- outline-offset: -5px;
  flex-wrap: wrap;
  display: flex;
  flex-direction: column;
@@ -813,18 +830,12 @@ margin-left: -40px;
 }
 
 .hotels-list   {
-outline: 5px solid rgba(0, 0, 255, 0.3);
-outline-offset: -5px;
 display: flex;
 flex-direction: row;
 border-bottom: 1px solid var(--basic-grey-lighten);
 /*grid-template-columns: 1fr 1fr 1fr;*/
 }
 
-.sopt-item {
-outline: 5px solid rgba(0, 0, 255, 0.3);
- outline-offset: -5px;
-}
 
 .hotel-type {
   display: flex;
@@ -832,7 +843,9 @@ outline: 5px solid rgba(0, 0, 255, 0.3);
 }
 
 .hotel-photo {
+  margin-left: 72px;
   margin-right: 24px;
+  padding: 0;
   order: -2;
 }
 
@@ -862,13 +875,8 @@ margin-left: 522px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  text-align: right;
 }
 
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-}
 
 a.hotel-link {
   color: var(--basic-white);
@@ -877,6 +885,9 @@ a.hotel-link {
   font-weight: 700;
   text-align: center;
 }
+
+
+
 
 
 
