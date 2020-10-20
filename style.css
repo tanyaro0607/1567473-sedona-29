@@ -75,6 +75,7 @@ img {
 
 .main-header-logo {
  position: absolute;
+ z-index: 3;
   /* order:0; - значение по умолчанию по умолчанию, расположение логотипа*/
 }
 
@@ -83,13 +84,32 @@ img {
   height: 56px;
 }
 
+
+
+
+.image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-text {
+  position: absolute;
+}
+
+.image-line{
+  position: absolute;
+  margin-top: 226px;
+}
+
 /*Main-navigation*/
 
 .main-navigation-wrapper {
- display: grid;
  grid-template-columns: max-content;
  background-color: var(--basic-white);
  width: 1200px;
+ height: 56px;
 }
 
 .main-navigation {
@@ -99,6 +119,7 @@ img {
  color: var(--basic-black);
  background-color: transparent;
 }
+
 
 
 /* User navigation */
@@ -167,7 +188,11 @@ text-align: center;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  height: 272px;
+  height: 216px;
+}
+
+.subtitle p {
+  margin: 0 340px 51px;
 }
 
 .subtitle-title {
@@ -178,14 +203,27 @@ text-align: center;
 /* Features */
 
 
+
+
 .features-list,
 .tourism-list {
  list-style: none;
+ margin: 0;
 }
 
 .feature-item,
 .tourism-item {
   text-align: center;
+  margin: 0;
+}
+
+.tourism-item-souvenirs svg {
+  margin-top:55px;
+}
+
+.tourism-item-house svg,
+.tourism-item-food svg {
+  margin-top:60px;
 }
 
 .feature-item {
@@ -200,13 +238,18 @@ text-align: center;
  margin: 0;
  padding: 0;
 }
+
 .section-title {
   font-size: 21px;
   line-height: 21px;
+  margin-bottom: 25px;
+  padding: 0;
 }
+
 
 .feature-item-content {
   background-color: var(--basic-neutral);
+  height: 256px;
 }
 
 .feature-item-one,
@@ -492,9 +535,6 @@ border-collapse: collapse;
 }
 
 
-
-
-
 /* results-searc Найденные варианты*/
 
 .total-search h3,
@@ -621,9 +661,21 @@ color: var(--basic-black);
 }
 
 
-.tourism-item,
+.tourism-item {
+  text-align: center;
+}
+
 .feature-item {
   text-align: center;
+}
+
+.tourism-item p {
+  margin-bottom: 82px;
+  padding: 0;
+}
+
+.tourism-item img {
+  margin-top: 60px;
 }
 
 .tourism-list,
@@ -633,13 +685,6 @@ color: var(--basic-black);
   margin: 0;
   padding: 0;
   list-style: none;
-  padding: 30px;
-}
-
-.tourism-item p,
-.section-title p {
-  margin: 0 20px;
-  padding: 20px;
 }
 
 
@@ -669,6 +714,22 @@ color: var(--basic-black);
 .feature-item-two-content{
   text-align: right;
   order:1;
+  height: 256px;
+}
+
+.application {
+  height: 291px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  }
+
+.application h2 {
+  margin-top: 58px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 700;
 }
 
 
@@ -776,8 +837,7 @@ margin-left: -40px;
   background-color: transparent;
   color: var(--basic-white);
   border: 1px solid var(--basic-white);
-  width: 137px;
-  height: 36px;
+  padding: 7px 35px 8px 36px;
   align-self: center;
 }
 
@@ -879,11 +939,6 @@ a.hotel-link {
 .hotel-reserve{
   display: flex;
 }
-
-
-
-
-
 
 
 
