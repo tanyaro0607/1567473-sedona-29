@@ -74,13 +74,13 @@ img {
 }
 
 .main-header-logo {
- outline: 5px solid rgba(255, 0, 0, 0.3);
- outline-offset: -5px;
+ position: absolute;
   /* order:0; - значение по умолчанию по умолчанию, расположение логотипа*/
 }
 
 .main-header-bar {
   background-color: var(--basic-white);
+  height: 56px;
 }
 
 /*Main-navigation*/
@@ -90,12 +90,9 @@ img {
  grid-template-columns: max-content;
  background-color: var(--basic-white);
  width: 1200px;
- margin: 0 auto;
- padding: 0;
 }
 
 .main-navigation {
- display: grid;
  font-size: 14px;
  line-height: 26px;
  font-weight: 700;
@@ -115,16 +112,9 @@ img {
   padding: 0;
 }
 
-.site-navigation {
-display: flex;
-flex-wrap: wrap;
-width: 1200px;
-justify-content: space-around;
-}
 
 .site-navigation a {
   color: var(--basic-black);
-  display: block;
 }
 
 .site-navigation-item-hotels {
@@ -145,7 +135,10 @@ justify-content: space-around;
 
 .site-navigation {
   list-style: none;
-  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 1200px;
   padding: 0;
 }
 
@@ -541,33 +534,33 @@ a.hotel-link {
   padding: 3px 17px 3px 16px;
 }
 
-.details {
+.hotel-link-details {
   background-color: var(--basic-blue-light);
   margin-right: 5px; 
   }
 
 
- .details:hover {
+ .hotel-link-details:hover {
   background-color:#669EC0;
   opacity: 1;
 }
 
-  .details:active {
+  .hotel-link-details:active {
   background-color:#669EC0;
   color: rgba(255, 255, 255, 0.3);
 }
 
 
-.booking{
+.hotel-link-booking{
   background-color: var(--basic-brown-light);
   }
 
- .booking:hover {
+ .hotel-link-booking:hover {
   background-color:#604E43;
   opacity: 1;
 }
 
-  .booking:active {
+  .hotel-link-booking:active {
   background-color:#503E33;
   color: rgba(255, 255, 255, 0.3);
 }
@@ -576,16 +569,11 @@ a.hotel-link {
   background-color: var(--brown-ultra-light);
   color: var(--basic-grey);
   text-transform: uppercase;
-  width: 110px;
-  height: 27px;
+  padding: 0;
   text-align: center;
   align-self: flex-end;
+  padding: 3px 12px 3px 15px
 }
-
-  .rating p {
-  padding: 3px 12px 3px 15px;
-  }
-
 
 .hotel a,
 .total-search a {
@@ -837,11 +825,6 @@ border-bottom: 1px solid var(--basic-grey-lighten);
 }
 
 
-.hotel-type {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .hotel-photo {
   margin-left: 72px;
   margin-right: 24px;
@@ -887,7 +870,15 @@ a.hotel-link {
 }
 
 
-
+.hotel-type,
+.hotel-booking {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.hotel-reserve{
+  display: flex;
+}
 
 
 
