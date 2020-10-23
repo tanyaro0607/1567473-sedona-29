@@ -38,7 +38,6 @@ body {
   color: var(--basic-black);
   text-transform: uppercase;
   background-color: var(--basic-white);
-  background-image: url(".png"); /*подключим картинку*/
   background-position: absolute;
   background-repeat: no-repeat;
 
@@ -85,13 +84,12 @@ img {
 }
 
 
-
-
 .image {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .background-text {
@@ -101,7 +99,6 @@ img {
 .image-line{
   position: absolute;
   bottom: 0;
-  top: 510px;
 }
 
 /*Main-navigation*/
@@ -110,7 +107,7 @@ img {
  grid-template-columns: max-content;
  background-color: var(--basic-white);
  width: 1200px;
- height: 56px;
+ min-height: 56px;
 }
 
 .main-navigation {
@@ -120,7 +117,6 @@ img {
  color: var(--basic-black);
  background-color: transparent;
 }
-
 
 
 /* User navigation */
@@ -134,15 +130,16 @@ img {
   padding: 0;
 }
 
-
 .site-navigation a {
   color: var(--basic-black);
 }
 
 
-  .site-navigation-item {
+.site-navigation-item {
   color: var(--basic-black);
+  width: 300px;
 }
+
 
   .site-navigation-item a:hover {
   color: var(--basic-blue-light); 
@@ -160,14 +157,29 @@ img {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  width: 1200px;
   padding: 0;
+} 
+
+.site-navigation-item-left {
+  text-align: left;
+}
+
+.site-navigation-item-right {
+  text-align: right;
 }
 
 .site-navigation-current a:not([href]) {
   background-color: var(--basic-white);
 }
+
+.site-navigation-item:last-child a {
+  padding-right: 72px;
+  }
+
+
+.site-navigation-item:first-child a {
+  padding-left: 72px;
+  }
 
 
 /*container main */
@@ -185,27 +197,31 @@ text-align: center;
 
 .subtitle {
   text-align: center;
-  line-height: 26px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
   height: 216px;
+  padding: 0;
 }
 
 .subtitle p {
-  margin: 0 340px 51px;
+  width: 1200px;
 }
 
 .subtitle-title {
   margin: 42.5px 365px 16.5px;
   font-size: 21px;
+  line-height: 26px;
 }
 
 /* Features */
 
-
-
+.tourism-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
 
 .features-list,
 .tourism-list {
@@ -213,45 +229,21 @@ text-align: center;
  margin: 0;
 }
 
-.feature-item,
-.tourism-item {
-  text-align: center;
-  margin: 0;
-}
-
-.tourism-item-souvenirs svg {
-  margin-top:55px;
-}
-
-.tourism-item-house svg,
-.tourism-item-food svg {
-  margin-top:60px;
+.features-list {
+ margin: 0;
+ padding: 0;
 }
 
 .feature-item {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
-  height: 256px;
+  justify-content: flex-start;
+  align-items: center;
 }
-
-.features-list {
- margin: 0;
- padding: 0;
-}
-
-.section-title {
-  font-size: 21px;
-  line-height: 21px;
-  margin-bottom: 25px;
-  padding: 0;
-}
-
 
 .feature-item-content {
   background-color: var(--basic-neutral);
-  height: 256px;
 }
 
 .feature-item-one,
@@ -267,6 +259,7 @@ text-align: center;
   vertical-align: middle;
   text-transform: uppercase;
   border: none;
+  outline: none;
   }
 /* footer*/
 
@@ -288,12 +281,21 @@ text-align: center;
 .footer-contacts {
   font-size: 21px;
   font-weight: 700;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  padding:0;
+  margin: 0; 
 }
 
+.footer-contacts p {
+  padding:0;
+  margin: 0; 
+}
 
 /*footer-social соц сети*/
-
 
 .footer-social ul {
   list-style: none;
@@ -303,7 +305,6 @@ text-align: center;
   margin: 0 auto;
   padding: 0;
 }
-
 
 /* Social button */
 
@@ -316,7 +317,7 @@ text-align: center;
   height: 48px;
   background-color: var(--basic-blue-light);
   color: inherit;
-  margin: 36px 6px;
+  margin: 36px 3px;
 }
 
 .social-button:hover {
@@ -350,12 +351,106 @@ color: var(--basic-black);
 }
 
 /*Модальные окна*/
-
-.modal {
-  color: var(--basic-black);
-  background-color: var(--basic-white);
+.modal-application-search {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
+.figure-days {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.appointment-form svg {
+  padding-top: 8px;
+}
+
+.appointment-form input {
+  font-size: 14px;
+ line-height: 26px;
+ font-weight: 700;
+ text-transform:uppercase;
+}
+
+.window-metrics{
+ background: var(--brown-ultra-light);
+ width: 320px;
+ height: 38px;
+ border:none;
+ margin-bottom: 29px;
+ display: flex;
+ justify-content: space-between;
+ padding-left: 13px;
+ padding-right: 10px;
+}
+.figure-people {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.figure-person{
+ background: var(--brown-ultra-light);
+ width: 114px;
+ height: 38px;
+ border:none;
+}
+
+
+.figure-person input {
+  width: 26px;
+  text-align: center;
+  border:none;
+ background-color: transparent;
+ padding-top: 6px;
+ padding-left: 12px;
+ padding-right: 14px;
+}
+
+.figure-person:not(:last-child):{
+ margin-right: 53px;
+}
+
+
+.window-metrics input {
+  color:var(--basic-black);
+  text-align: left;
+  border:none;
+  background-color: transparent;
+}
+
+.appointment-form {
+  font-size: 14px;
+ line-height: 26px;
+ font-weight: 700;
+  margin: 55px;
+}
+
+/*Убрать стрелки для браузера Google Chrome:*/
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/*Убрать стрелки для браузера Firefox:*/
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
+}
+/*Убрать стрелки Для других браузеров */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 /*страница 2 Внутренняя */
 
@@ -367,6 +462,10 @@ color: var(--basic-black);
   height:217;
 }
 
+.filter-search-bar {
+  min-height: 217px;
+}
+
 .filter-list {
 list-style: none;
 }
@@ -376,17 +475,16 @@ border: 2px solid var(--basic-white);
 border-radius: 2px;
 height:36px;
 width:317px;
-text-align: center;
-border-collapse: collapse;
 display: flex;
-justify-content: space-around;
+flex-wrap: wrap;
 align-items: center;
+justify-content: space-around;
 }
 
 .min-price::after {
 content:"";
 position: absolute;
-transform: translateX(65px);
+transform: translateX(49px);
 padding: 0;
 width: 2px;
 height: 22px;
@@ -454,16 +552,13 @@ background: var(--basic-white);
   padding: 0;
 }
 
-.sorting-bar {
-  display: flex;
-  flex-wrap: wrap;
-  width: 1200px;
-  align-items:center; 
+.sorting {
   border-bottom: 1px solid var(--basic-grey-lighten);
-  margin: 0;
-  padding: 0;
 }
 
+.arrows {
+  margin-left: 500px; /*как правильно сделать отступ стрелок, чтобы работало переполнение?*/
+}
 
 
 .sorting h3 {
@@ -485,10 +580,6 @@ background: var(--basic-white);
 }
 .sort-item:not(:last-child) {
   margin-right: 32px;
-}
-
-.arrows {
-  margin-left: 503px;
 }
 
 .total-search h4,
@@ -545,7 +636,6 @@ background: var(--basic-white);
  color: var(--basic-blue-light);
 }
 
-
 /* results-searc Найденные варианты*/
 
 .total-search h3,
@@ -582,8 +672,9 @@ a.hotel-link {
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
-  padding: 3px 17px 3px 16px;
-}
+  padding: 3px 17px 3px 16px; /*при увеличении текста сверху - кнопки растяшивается, как этого избежать?
+   */
+ }
 
 .hotel-link-details {
   background-color: var(--basic-blue-light);
@@ -644,11 +735,15 @@ h4.hotel-title {
   font-size: 21px;
   line-height: 26px;
   font-weight: 700;
+  padding: 0;
+  margin: 0;
 }
 
 .hotel-name {
 list-style: none;
 color: var(--basic-black);
+padding: 0;
+margin: 0;
 }
 
 .hotel-name:hover {
@@ -659,7 +754,7 @@ color: var(--basic-black);
  opacity: 0.3;
 }
 
-/*Сетка на гридах*/
+/* Grid Сетка на гридах*/
 .page {
   height: 100%;
 }
@@ -671,18 +766,21 @@ color: var(--basic-black);
   align-content: start;
 }
 
-
-.tourism-item {
+.tourism-item p{
   text-align: center;
-}
-
-.feature-item {
-  text-align: center;
-}
-
-.tourism-item p {
+  max-width: 300px;
+  margin-left: 50px;
+  margin-right: 50px;
   margin-bottom: 82px;
+  padding-bottom: 0;
+}
+
+.feature-item-content p {
   padding: 0;
+  width: 262px;
+  margin-left: 69px;
+  margin-right: 69px;
+  text-align: center;
 }
 
 .tourism-item img {
@@ -698,6 +796,9 @@ color: var(--basic-black);
   list-style: none;
 }
 
+.tourism-list {
+  min-height: 330px;
+}
 
 .feature-item-one {
  display: grid;
@@ -725,36 +826,42 @@ color: var(--basic-black);
 .feature-item-two-content{
   text-align: right;
   order:1;
-  height: 256px;
+  min-height: 256px;
 }
 
 .application {
-  height: 291px;
+  min-height: 291px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   text-align: center;
   }
 
-.application h2 {
-  margin-top: 58px;
-  font-size: 24px;
-  line-height: 30px;
-  font-weight: 700;
+.application p {
+  text-align: center;
+  margin-left: 383px;
+  margin-right: 382px;
+  width: 435px;
 }
 
-
+.application-title  {
+  margin-top: 58px;
+  font-size: 30px;
+  line-height: 24px;
+  font-weight: 700;
+}
 
 .main-footer .container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; 
 }
 
-
  .footer-copyright{
  display: flex;
+ flex-wrap: wrap;
  align-items: center;
- justify-content: center;
+ justify-content: flex-end;
+ padding-right: 139px;
 }
 
 .footer-copyright-text {
@@ -778,16 +885,18 @@ color: var(--basic-black);
  justify-content: space-between;
  margin: 0;
  padding: 0;
-border: none;
+ border: none;
+ font-size: 16px;
+ line-height: 21px;
+ font-weight: 700;
 }
 
 .filter {
-display: flex;
-justify-content: flex-start;
-align-items: center;
-height: 217px;
-flex-wrap: wrap;
-}
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: flex-start;
+} 
 
 .filter ul {
   padding: 0;
@@ -798,8 +907,10 @@ flex-wrap: wrap;
 
 .filter-option {
   margin-bottom: 25px;
+   font-size: 14px;
+ line-height: 21px;
+ font-weight: 400;
 }
-
 
 .filter-option label {
   position: relative;
@@ -808,42 +919,30 @@ flex-wrap: wrap;
   user-select: none;
 }
 
-.filter-criterias  {
- font-size: 16px;
- line-height: 21px;
-font-weight: 700;
-}
-
 .filter-criterias-price legend {
   margin-bottom: 10.5px;
 }
 
-.filter-criterias-infrastructure {
-  margin-left: 100px;
-}
 
+.filter-criterias-infrastructure {
+  margin-left: 111px;
+} 
 
 .filter-criterias-infrastructure legend {
   margin-bottom: 24px;
-  margin-left: -50px;
-}
-
-.filter-criterias-house {
-  margin-right: 347px;
-  margin-left: 119px;
+  margin-left: -39px;
 }
 
 .filter-criterias-house legend {
 margin-bottom: 24px;
-margin-left: -50px;
+margin-left: -39px;
 }
 
 .filter-criterias-price {
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
-
-
 
 .filter-criterias-price legend {
   font-weight: 700;
@@ -851,31 +950,32 @@ margin-left: -50px;
   line-height: 21px;
 }
 
-
 .filter-button {
   background-color: transparent;
   color: var(--basic-white);
   border: 1px solid var(--basic-white);
   padding: 7px 35px 8px 36px;
   align-self: center;
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
 }
-
 
 .filter-input-checkbox:not(:checked) + label::before {
   content: "";
   position: absolute;
-  left: -46px;
+  left: -39px;
   top: 0;
   width: 19px;
   height: 19px;
   border: 2px solid rgba(255, 255, 255, 1);
-  border-radius: 15%; /* или тут лучше svg вставить? */
+  border-radius: 15%; 
 }
 
 .filter-input-checkbox:checked + label::before {
   content: "";
   position: absolute;
-  left: -46px;
+  left: -39px;
   top: 0;
   width: 23px;
   height: 23px;
@@ -888,7 +988,7 @@ margin-left: -50px;
   content: "";
   position: absolute;
   top: 0px;
-  left: -42px;
+  left: -35px;
   width: 21.72px;
   height: 16.76px;
   background-image: url("img/tick.svg");
@@ -898,11 +998,10 @@ margin-left: -50px;
 
 .hotels-list   {
 display: flex;
-flex-direction: row;
+flex-wrap: wrap;
 border-bottom: 1px solid var(--basic-grey-lighten);
 /*grid-template-columns: 1fr 1fr 1fr;*/
 }
-
 
 .hotel-photo {
   margin-left: 72px;
@@ -927,10 +1026,6 @@ margin-bottom: 30px;
 margin-left: 522px;
 }
 
-.hotel-name h4 {
-  margin:0;
-  padding: 0;
-}
 
 .stars {
   margin-bottom: 50px;
@@ -939,7 +1034,6 @@ margin-left: 522px;
   justify-content: flex-end;
 }
 
-
 a.hotel-link {
   color: var(--basic-white);
   font-size: 14px;
@@ -947,7 +1041,6 @@ a.hotel-link {
   font-weight: 700;
   text-align: center;
 }
-
 
 .hotel-type,
 .hotel-booking {
@@ -961,7 +1054,7 @@ a.hotel-link {
 
 .modal-application {
   position: fixed;
-  top: 205px;
+  top: 205px; /*по фигме 2083px, но если указываю это значение, окно видно только при маленьком расширении, на странице при 100% - не видно, как поступить?*/
   bottom: auto;
   margin-left: 316px;
   margin-right: 316px;
@@ -997,7 +1090,6 @@ a.hotel-link {
   margin: 0;
 }
 
-
 .modal-application-search {
   background-color: var(--basic-white);
   width: 568px;
@@ -1013,6 +1105,7 @@ a.hotel-link {
   font-weight: 700;
   outline: none;
   border:none;
+  width: 458px;
 }
 
  .button-search:hover {
@@ -1041,3 +1134,80 @@ a.hotel-link {
   transform: translateX(-600px);
 }
 
+.max-price input,
+.min-price input {
+  background-color: transparent;
+  color: var(--basic-white);
+  border:none;
+  outline: none;
+  width: 40px;
+}
+
+.max-price,
+.min-price {
+  font-size: 14px;
+  line-height: 21px;
+  font-weight: 400;
+}
+
+
+.feature-item p {
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.section-title {
+  padding-top: 47px;
+  padding-bottom: 0px;
+  margin: 0;
+}
+
+.feature-item {
+  min-height: 256px;
+}
+
+.section-title {
+  font-size: 21px;
+  line-height: 21px;
+  align-self: center;
+  width: 160px;
+  justify-content: center;
+  padding: 0;
+}
+
+.feature-item h3 {
+  margin-top: 47px;
+  margin-bottom: 25px;
+  text-align: center;
+  padding-bottom: 0;
+}
+
+.tourism-item h3 {
+  margin-top: 30px;
+}
+
+.feature-item-two-content p, 
+.feature-item-one-content p{
+  margin-left: 49px;
+  margin-right: 49px;
+  text-align: center;
+}
+
+.filter-criterias-infrastructure {
+  width: 228px;
+  margin-right: 40px;
+}
+
+.filter-criterias-house {
+ width: 228px;
+ margin-right: 190px;
+}
+
+.filter-criterias-price {
+  margin-right: 73px;
+  width: 317px;
+}
+
+.filter-criterias {
+  margin-top: 26.5px;
+}
