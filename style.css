@@ -11,12 +11,13 @@
   --basic-grey-light:#BDBBBC; /*нажатие для footer-copyright*/
   --basic-grey-lighten:#E5E5E5;/* border-bottom для 2 стр*/ 
   --basic-grey-special:#CACACA; /*стрелки*/
+  --basic-grey-calm:#A9A9A9;
 
 /*Button*/
 
   /*для блока "Поиск гостиниц в Седоне и коричневых кнопок*/
-  --basic-brown-light:#766357; /*покой*/
   --basic-brown:#604E43;/*наведение*/
+  --basic-brown-light:#766357; /*покой*/
   --basic-brown-dark:#503E33;/*нажатие*/
   --brown-ultra-light:#F2F2F2; /*окно подложка покой + рейтинг*/
   --brown-ultra-lighten:#EBEBEB; /*окно подложка наведение*/
@@ -40,16 +41,16 @@ body {
   background-color: var(--basic-white);
   background-position: absolute;
   background-repeat: no-repeat;
-
 }
 
-a {
-  text-decoration: none;
-}
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+a {
+  text-decoration: none;
 }
 
 .visually-hidden {
@@ -139,7 +140,9 @@ img {
   color: var(--basic-black);
   width: 300px;
 }
-
+.site-navigation-item a {
+  text-decoration:none;
+}
 
   .site-navigation-item a:hover {
   color: var(--basic-blue-light); 
@@ -148,10 +151,6 @@ img {
   color:var(--basic-black);
   opacity: 0.3;
 }
-
-.site-navigation-item-hotels {
-  color: var(--basic-brown-light);
-  }
 
 .site-navigation {
   list-style: none;
@@ -281,13 +280,9 @@ text-align: center;
 .footer-contacts {
   font-size: 21px;
   font-weight: 700;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
-  padding:0;
-  margin: 0; 
+ padding-top: 23px;
+ text-align: center;
+ margin-left: 50px;
 }
 
 .footer-contacts p {
@@ -363,9 +358,6 @@ color: var(--basic-black);
   justify-content: space-between;
 }
 
-.appointment-form svg {
-  padding-top: 8px;
-}
 
 .appointment-form input {
   font-size: 14px;
@@ -376,20 +368,19 @@ color: var(--basic-black);
 
 .window-metrics{
  background: var(--brown-ultra-light);
- width: 320px;
+ width: 346px;
  height: 38px;
  border:none;
  margin-bottom: 29px;
  display: flex;
  justify-content: space-between;
- padding-left: 13px;
- padding-right: 10px;
 }
+
 .figure-people {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-}
+
+  }
 
 .figure-person{
  background: var(--brown-ultra-light);
@@ -400,14 +391,15 @@ color: var(--basic-black);
 
 
 .figure-person input {
-  width: 26px;
-  text-align: center;
+  width: 114px;
+  height: 38px;
+ text-align: center;
   border:none;
  background-color: transparent;
- padding-top: 6px;
- padding-left: 12px;
- padding-right: 14px;
+ border:none;
+ outline: none;
 }
+
 
 .figure-person:not(:last-child):{
  margin-right: 53px;
@@ -418,7 +410,22 @@ color: var(--basic-black);
   color:var(--basic-black);
   text-align: left;
   border:none;
+   outline: none;
+  width: 100%;
   background-color: transparent;
+  padding-left: 13px;
+  padding-right: 10px;
+}
+.window-metrics input{
+  background-color: #F2F2F2;
+}
+
+.window-metrics input:hover {
+  background-color:var(--brown-ultra-lighten);
+}
+
+.window-metrics input:focus {
+  background-color: var(--basic-white);
 }
 
 .appointment-form {
@@ -427,6 +434,49 @@ color: var(--basic-black);
  font-weight: 700;
   margin: 55px;
 }
+
+.window-metrics svg {
+  transform: translate(-31px,7px);
+  position: absolute;
+  color:var(--basic-grey-calm);
+}
+
+.window-metrics svg:hover path {
+  fill:var(--basic-black);
+}
+.window-metrics svg:active path {
+  fill: var(--basic-blue-light);
+}
+.enlarge {
+  border:none;
+  position: absolute;
+}
+
+.enlarge-plus{
+  transform: translate(25px,-28px);
+}
+
+.enlarge-minus{
+  transform: translate(8px,7px);
+}
+.enlarge svg {
+  color:var(--basic-grey-calm);
+}
+
+.enlarge svg:hover path {
+  fill:var(--basic-black);
+}
+.enlargesvg:active path {
+  fill: var(--basic-blue-light);
+}
+
+.enlarge svg:hover rect {
+  fill:var(--basic-black);
+}
+.enlarge svg:active rect {
+  fill: var(--basic-blue-light);
+}
+
 
 /*Убрать стрелки для браузера Google Chrome:*/
 
@@ -459,11 +509,7 @@ input[type=number]::-webkit-outer-spin-button {
   color: var(--basic-white);
   background: url("img/background.png");
   width: 1200px;
-  height:217;
-}
-
-.filter-search-bar {
-  min-height: 217px;
+  min-height:217;
 }
 
 .filter-list {
@@ -481,10 +527,11 @@ align-items: center;
 justify-content: space-around;
 }
 
+
 .min-price::after {
 content:"";
 position: absolute;
-transform: translateX(49px);
+transform: translate(38px,-2px);
 padding: 0;
 width: 2px;
 height: 22px;
@@ -493,13 +540,16 @@ background: var(--basic-white);
 
 .range-filter {
   background-color: transparent;
+  padding: 0;
+  margin: 0;
 }
 
 .range-controls {
   margin-top: 20px;
-  margin-bottom: 33px;
   position: relative;
  }
+
+
 
 .range-controls .scale {
   height: 2px;
@@ -507,6 +557,7 @@ background: var(--basic-white);
   opacity: 0.3;
   margin: 0;
   width: 316px;
+  margin-bottom: 33px;
   }
 
 .range-controls .bar {
@@ -527,7 +578,24 @@ background: var(--basic-white);
   box-shadow: 0 1.91px rgba(171, 171, 171, 0.3);
   position: absolute;
   top: -7px;
+}
+
+.range-controls .toggle-min:hover,
+.range-controls .toggle-max:hover {
+  width: 4.6px;
+  height: 4.36px;
+  padding: 0;
+  border: 9px solid #ffffff;
+  background-color: #ababab;
+  border-radius: 50%;
+  box-shadow: 0 1.91px rgba(171, 171, 171, 0.3);
+  position: absolute;
+  top: -7px;
   left: 0;
+}
+
+.range-controls .toggle-max:hover {
+  left: 248px;
 }
 
 .range-controls .toggle-min {
@@ -538,6 +606,7 @@ background: var(--basic-white);
   left: 248px;
 }
 
+
 .demonstrate-controls {
   margin-left: 84px;
 }
@@ -545,39 +614,36 @@ background: var(--basic-white);
 /*total-search НАЙДЕНО:3*/
 
 .sorting  {
+  min-height: 86px;
   display: flex;
   flex-wrap: wrap;
   align-items:baseline;
+  align-items: center;
   margin: 0;
-  padding: 0;
-}
-
-.sorting {
+  padding: 0px 73px;
   border-bottom: 1px solid var(--basic-grey-lighten);
-}
-
-.arrows {
-  margin-left: 500px; /*как правильно сделать отступ стрелок, чтобы работало переполнение?*/
 }
 
 
 .sorting h3 {
-  margin: 29px 46px 31px 73px;
+  margin-right: 46px;
   padding: 0;
 }
 
 .sorting h4 {
-  margin:31px 40px 37px 0px ;
+  margin-right: 40px ;
+  padding: 0;
 }
 
 .sort-list {
+  margin-right: auto;
   display: flex;
   list-style: none;
-  padding: 0;
-  margin: 0;
   flex-wrap: wrap;
   position: relative;
+  padding: 0;
 }
+
 .sort-item:not(:last-child) {
   margin-right: 32px;
 }
@@ -602,11 +668,13 @@ background: var(--basic-white);
   .sort-item a {
   color: var(--basic-black);
   opacity: 0.3;
+   border-bottom: 1px dashed var(--basic-blue-light);
 }
 
   .sort-item a:hover {
   color: var(--basic-blue-light); 
   opacity: 1;
+  border-bottom: 1px dashed var(--basic-blue-light);
 }
   .sort-item a:active {
   color:var(--basic-black);
@@ -619,6 +687,10 @@ background: var(--basic-white);
   border:none;
 }
 
+.arrows {
+  border:none;
+  outline: none;
+}
 .button-arrow-up {
   color: var(--basic-grey-special);
   margin-right: 12px;
@@ -661,18 +733,15 @@ background: var(--basic-white);
 
 .hotel-link {
   color: var(--basic-white);
-  justify-content: center;
-  align-items: center;
   text-transform: uppercase;
 }
 
 a.hotel-link {
   display: inline-block;
-  padding: 0;
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
-  padding: 3px 17px 3px 16px; /*при увеличении текста сверху - кнопки растяшивается, как этого избежать?
+  padding: 3px 17px 3px 16px; /*при увеличении текста сверху - кнопки растягиваются, как этого избежать?
    */
  }
 
@@ -711,11 +780,10 @@ a.hotel-link {
   background-color: var(--brown-ultra-light);
   color: var(--basic-grey);
   text-transform: uppercase;
-  padding: 0;
-  text-align: center;
-  align-self: flex-end;
-  padding: 3px 12px 3px 15px
+  padding: 3px 12px 3px 15px;
+  margin-top: 43px;
 }
+
 
 .hotel a,
 .total-search a {
@@ -831,20 +899,15 @@ margin: 0;
 
 .application {
   min-height: 291px;
+  padding:0 382PX;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   text-align: center;
   }
 
-.application p {
-  text-align: center;
-  margin-left: 383px;
-  margin-right: 382px;
-  width: 435px;
-}
-
 .application-title  {
+  text-transform: uppercase;
   margin-top: 58px;
   font-size: 30px;
   line-height: 24px;
@@ -872,6 +935,8 @@ margin: 0;
 /*Сетка на грилах для внутр страницы*/
 
 .hotels {
+  padding:0;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -882,7 +947,6 @@ margin: 0;
  flex-wrap: wrap;
  display: flex;
  flex-direction: column;
- justify-content: space-between;
  margin: 0;
  padding: 0;
  border: none;
@@ -894,8 +958,7 @@ margin: 0;
 .filter {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  justify-content: flex-start;
+  padding:26px 72px;
 } 
 
 .filter ul {
@@ -905,8 +968,10 @@ margin: 0;
   line-height: 18px;
 }
 
+.filter-option:not(:last-child) {
+  padding-bottom: 25px;
+}
 .filter-option {
-  margin-bottom: 25px;
    font-size: 14px;
  line-height: 21px;
  font-weight: 400;
@@ -919,32 +984,30 @@ margin: 0;
   user-select: none;
 }
 
-.filter-criterias-price legend {
-  margin-bottom: 10.5px;
+
+.filter-criterias .filter-list{
+  padding-left: 35px;
 }
 
-
-.filter-criterias-infrastructure {
-  margin-left: 111px;
-} 
-
-.filter-criterias-infrastructure legend {
-  margin-bottom: 24px;
-  margin-left: -39px;
+.filter-criterias-house {
+  margin-left: 119px;
 }
 
-.filter-criterias-house legend {
+.filter-criterias legend {
 margin-bottom: 24px;
-margin-left: -39px;
 }
+
 
 .filter-criterias-price {
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin-left: auto;
+  padding: 0;
+  border: none;
 }
 
 .filter-criterias-price legend {
+  margin-bottom: 10px;
   font-weight: 700;
   font-size: 16px;
   line-height: 21px;
@@ -959,6 +1022,11 @@ margin-left: -39px;
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
+}
+
+.filter-button:hover {
+  background-color: var(--basic-white);
+  color: var(--basic-black);
 }
 
 .filter-input-checkbox:not(:checked) + label::before {
@@ -996,42 +1064,37 @@ margin-left: -39px;
   background-position: 0 0;
 }
 
+
 .hotels-list   {
-display: flex;
-flex-wrap: wrap;
-border-bottom: 1px solid var(--basic-grey-lighten);
-/*grid-template-columns: 1fr 1fr 1fr;*/
+  padding: 23px 72px;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--basic-grey-lighten);
+
 }
 
 .hotel-photo {
-  margin-left: 72px;
+  margin-top: 7px;
   margin-right: 24px;
   padding: 0;
   order: -2;
 }
 
-.hotel-photo {
-margin-top: 30px;
-margin-bottom: 30px;
-}
-
-.hotel-info {
-margin-top: 23.5px;
-margin-bottom: 30px;
-}
-
 .hotel-prestige {
-margin-top: 29px;
-margin-bottom: 30px;
-margin-left: 522px;
+  padding: 0;
+  margin-left: auto;
 }
 
 
 .stars {
-  margin-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+
+.stars li:not(:last-child) {
+  padding-right: 6px;
 }
 
 a.hotel-link {
@@ -1048,13 +1111,15 @@ a.hotel-link {
   flex-wrap: wrap;
   flex-direction: column;
 }
+
 .hotel-reserve{
   display: flex;
+  flex-wrap: wrap;
 }
 
 .modal-application {
-  position: fixed;
-  top: 205px; /*по фигме 2083px, но если указываю это значение, окно видно только при маленьком расширении, на странице при 100% - не видно, как поступить?*/
+  position: absolute;
+  top: 2083px; 
   bottom: auto;
   margin-left: 316px;
   margin-right: 316px;
@@ -1101,7 +1166,8 @@ a.hotel-link {
   color: var(--basic-white);
   padding: 16px 182px 16px 181px;
   font-size: 21px;
-  line-height: 27px;
+  line-height: 26px;
+  text-transform: uppercase;
   font-weight: 700;
   outline: none;
   border:none;
@@ -1148,6 +1214,8 @@ a.hotel-link {
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
+  position: absolute;
+  transform: translate(-15px,-9px);
 }
 
 
@@ -1191,23 +1259,4 @@ a.hotel-link {
   margin-left: 49px;
   margin-right: 49px;
   text-align: center;
-}
-
-.filter-criterias-infrastructure {
-  width: 228px;
-  margin-right: 40px;
-}
-
-.filter-criterias-house {
- width: 228px;
- margin-right: 190px;
-}
-
-.filter-criterias-price {
-  margin-right: 73px;
-  width: 317px;
-}
-
-.filter-criterias {
-  margin-top: 26.5px;
 }

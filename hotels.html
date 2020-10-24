@@ -23,7 +23,7 @@
         <li class="site-navigation-item site-navigation-item-left"> <a href="#"> Информация </a></li>
         <li class="site-navigation-item site-navigation-item-left"> <a href="#"> Фото и видео </a></li>
         <li class="site-navigation-item site-navigation-item-right"> <a href="#"> Карта штата </a></li>
-        <li class="site-navigation-item site-navigation-item-right site-navigation-item-hotels"> Гостиницы </li>
+        <li class="site-navigation-item site-navigation-item-right"> <a href="#"> Гостиницы </a></li>
         </ul>
       </div>
     </div>
@@ -39,15 +39,15 @@
         <ul class="filter-list">
           <li class="filter-option">
             <input class="visually-hidden filter-input-checkbox" type="checkbox" name="pool" id="pool" checked>
-            <label for="pool">Бассейн</label>
+            <label>Бассейн</label>
           </li>
           <li class="filter-option">
             <input class="visually-hidden filter-input-checkbox" type="checkbox" name="park" id="park">
-            <label for="park">Парковка</label>
+            <label>Парковка</label>
           </li>
           <li class="filter-option">
             <input class="visually-hidden filter-input-checkbox" type="checkbox" name="internet" id="internet">
-            <label for="internet"> WI-FI </label>
+            <label> WI-FI </label>
           </li>
         </ul>
       </fieldset>
@@ -56,27 +56,27 @@
         <ul class="filter-list">
           <li class="filter-option">
             <input class="visually-hidden filter-input-checkbox" type="checkbox" name="hotel" id="hotel" checked>
-            <label for="hotel">Гостиница</label>
+            <label>Гостиница</label>
           </li>
           <li class="filter-option">
             <input class="visually-hidden filter-input-checkbox" type="checkbox" name="motel" id="motel" checked>
-            <label for="motel">Мотель</label>
+            <label>Мотель</label>
           </li>
           <li class="filter-option">
             <input class="visually-hidden filter-input-checkbox" type="checkbox" name="apartments" id="apartments" checked>
-            <label for="apartments"> Аппартаменты </label>
+            <label> Аппартаменты</label>
           </li>
         </ul>
      </fieldset>
-        <fieldset class="filter-criterias filter-criterias-price"> 
+        <fieldset class="filter-criterias-price"> 
           <legend> Стоимость в сутки(Р):</legend>
         <div class="range-filter">
           <div class="price-controls">
             <p><label class="min-price">
-            от<input type="text" name="min-price" value="0">
+            от<input type="number" name="min-price" value="0">
             </label></p>
             <p> <label class="max-price">
-             до<input type="text" name="max-price" value="3000">
+             до<input type="number" name="max-price" value="3000">
             </label></p>
           </div> 
           <div class="range-controls">
@@ -100,15 +100,15 @@
     <h2 class="visually-hidden"> Итоги поиска </h2>
     <div class="sorting-bar">
     <div class="sorting">
-    <h3> Найдено:3 </h3>
+    <h3> Найдено:&thinsp;3 </h3>
     <h4> Сортировка: </h4>
     <ul class="sort-list"> 
     <li class="sort-item sort-item-price">По цене</li>
     <li class="sort-item">
-      <a class="sort-item-link" href="">По типу</a>
+      <a href="">По типу</a>
     </li>
     <li class="sort-item">
-      <a class="sort-item-link" href="">По рейтингу</a>
+      <a href="">По рейтингу</a>
     </li>
   </ul>
   <div class="arrows">
@@ -220,10 +220,8 @@
   <div class="container">
   <section class="footer-contacts">
   <h2 class="visually-hidden"> Наши контакты </h2>
-  <p> 
-    #VISITSEDONA <br>
-     тел.<a class="contacts-phone" href="tel:+7(495)666-01-66">+7(495)666-01-66</a>
-  </p>
+<p> #VISITSEDONA </p> <br>
+  <p> тел.<a class="contacts-phone" href="tel:+7(495)666-01-66">+7(495)666-01-66</a></p>
   </section>
   <section class="footer-social">
        <h2 class="visually-hidden"> Мы с соц. сетях </h2>
