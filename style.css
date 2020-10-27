@@ -382,7 +382,6 @@ color: var(--basic-black);
 .figure-people {
   display: flex;
   justify-content: space-between;
-
   }
 
 .figure-person{
@@ -452,6 +451,7 @@ color: var(--basic-black);
 }
 .enlarge {
   border:none;
+  outline: none;
   position: absolute;
 }
 
@@ -1003,7 +1003,7 @@ margin: 0;
 
 
 .filter-criterias .filter-list{
-  padding-left: 35px;
+  padding-left: 40px;
 }
 
 .filter-criterias-house {
@@ -1177,15 +1177,12 @@ a.hotel-link {
   height: 395px;
 }
 
-.modal-search input {
-  font-size: 21px;
-  line-height: 26px;
-  text-transform: uppercase;
-  font-weight: 700;
-}
-
 
 .button-search {
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
   margin-top: 54px;
   background-color: var(--basic-blue-light);
   color: var(--basic-white);
@@ -1282,6 +1279,7 @@ a.hotel-link {
 
 .feature-item-two-content p, 
 .feature-item-one-content p{
+  text-align: center;
   margin-left: 49px;
   margin-right: 49px;
 }
