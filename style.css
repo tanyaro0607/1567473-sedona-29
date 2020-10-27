@@ -68,6 +68,7 @@ a {
   overflow: hidden;
 }
 
+
 /*Main-header*/
 
 .main-header {
@@ -78,7 +79,6 @@ a {
 .main-header-logo {
  position: absolute;
  z-index: 3;
-  /* order:0; - значение по умолчанию по умолчанию, расположение логотипа*/
 }
 
 .main-header-bar {
@@ -103,6 +103,7 @@ a {
   position: absolute;
   bottom: 0;
 }
+
 
 /*Main-navigation*/
 
@@ -419,7 +420,7 @@ color: var(--basic-black);
   padding-right: 10px;
 }
 .window-metrics input{
-  background-color: #F2F2F2;
+  background-color: var(--brown-ultra-light);
 }
 
 .window-metrics input:hover {
@@ -508,6 +509,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 /*filter-search*/
 .filter-search {
+  position: relative;
   color: var(--basic-white);
   background: url("img/background.png");
   width: 1200px;
@@ -829,7 +831,7 @@ margin: 0;
   height: 100%;
 }
 
-.page-body {
+.page-body { 
   min-height: 100%;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
@@ -1203,22 +1205,20 @@ a.hotel-link {
   border:none;
 }
 
-.page-footer {
+.page-footer-one {
   z-index: 3;
   position: absolute;
   bottom: 0;
 }
 
 
-/*.map img {
-  transform: translateX(-600px);
-  z-index: 1;
-  position: absolute;
-} */
-
 .map {
   z-index: 2;
   position: relative;
+}
+
+.map img {
+  width: 100%;
 }
 
 
@@ -1280,4 +1280,19 @@ a.hotel-link {
 .feature-item-one-content p{
   margin-left: 49px;
   margin-right: 49px;
+}
+
+
+.page-body-wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: var(--brown-ultra-light);
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.main-header, 
+.container, 
+.main-footer {
+    background-color: var(--basic-white);
 }
