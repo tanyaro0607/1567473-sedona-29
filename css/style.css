@@ -12,6 +12,7 @@
   --basic-grey-lighten:#E5E5E5;/* border-bottom для 2 стр*/ 
   --basic-grey-special:#CACACA; /*стрелки*/
   --basic-grey-calm:#A9A9A9;
+  --basic-grey-dark:#6A6A6A; /*заблокированные чекбоксы*/
 
 /*Button*/
 
@@ -261,8 +262,8 @@ text-align: center;
   vertical-align: middle;
   text-transform: uppercase;
   border: none;
-  outline: none;
   }
+
 /* footer*/
 
 .main-footer {
@@ -292,6 +293,7 @@ text-align: center;
   padding:0;
   margin: 0; 
 }
+
 
 /*footer-social соц сети*/
 
@@ -412,7 +414,6 @@ color: var(--basic-black);
   color:var(--basic-black);
   text-align: left;
   border:none;
-   outline: none;
   width: 100%;
   background-color: transparent;
   padding-left: 13px;
@@ -428,6 +429,11 @@ color: var(--basic-black);
 
 .window-metrics input:focus {
   background-color: var(--basic-white);
+  outline: inherit;
+}
+
+.figure-people input:focus{
+  outline: inherit;
 }
 
 .appointment-form {
@@ -436,6 +442,14 @@ color: var(--basic-black);
  font-weight: 700;
   margin: 55px;
 }
+/*
+.window-metrics a {
+  position: relative;
+}
+
+.window-metrics a:focus {
+ outline: inherit;
+} */
 
 .window-metrics svg {
   transform: translate(-31px,7px);
@@ -449,11 +463,16 @@ color: var(--basic-black);
 .window-metrics svg:active path {
   fill: var(--basic-blue-light);
 }
+
 .enlarge {
   border:none;
-  outline: none;
   position: absolute;
 }
+
+.enlarge :focus{
+  outline: inherit;
+}
+
 
 .enlarge-plus{
   transform: translate(25px,-28px);
@@ -511,7 +530,8 @@ input[type=number]::-webkit-outer-spin-button {
 .filter-search {
   position: relative;
   color: var(--basic-white);
-  background: url("img/background.png");
+  background-image: url("../img/background.png");
+  background-color: var(--basic-blue-dark);
   width: 1200px;
   min-height:217;
 }
@@ -662,6 +682,11 @@ background: var(--basic-white);
 .sort-list a {
   color: var(--basic-black);
   opacity: 0.3;
+}
+
+.sort-list a:focus {
+  color: var(--basic-black);
+  opacity: 1;
 }
 
 .sort-item-price {
@@ -931,7 +956,7 @@ margin: 0;
   font-weight: 700;
 }
 
-.main-footer .container {
+.main-footer .footer-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; 
 }
@@ -1046,6 +1071,12 @@ margin-bottom: 24px;
   color: var(--basic-black);
 }
 
+.filter-button:focus {
+  background-color: var(--basic-white);
+  color: var(--basic-black);
+  outline: inherit;
+}
+
 .filter-input-checkbox:not(:checked) + label::before {
   content: "";
   position: absolute;
@@ -1064,7 +1095,7 @@ margin-bottom: 24px;
   top: 0;
   width: 23px;
   height: 23px;
-  background-image: url("img/border.svg");
+  background-image: url("../img/border.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
 }
@@ -1076,9 +1107,28 @@ margin-bottom: 24px;
   left: -35px;
   width: 21.72px;
   height: 16.76px;
-  background-image: url("img/tick.svg");
+  background-image: url("../img/tick.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
+}
+
+
+.filter-input-checkbox:focus + label::before {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+.filter-input-checkbox:focus + label::before {
+  outline: thin dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+.filter-input-checkbox:disabled + label,
+.filter-input-checkbox:checked:disabled + label,
+.filter-input-checkbox:disabled:hover + label,
+.filter-input-checkbox:disabled:focus + label {
+ color: var(-- --basic-grey-dark);
+ pointer-events: none;
 }
 
 
@@ -1187,31 +1237,28 @@ a.hotel-link {
   background-color: var(--basic-blue-light);
   color: var(--basic-white);
   padding: 16px 182px 16px 181px;
-  outline: none;
   border:none;
   width: 458px;
+  outline: inherit;
 }
 
  .button-search:hover {
   background-color:var(--basic-blue);
   opacity: 1;
-  outline: none;
-  border:none;
 }
 
-.button-search:active {
+.button-search:active,
+.button-search:focus {
   background-color:var(--basic-blue-dark);
   color: rgba(255, 255, 255, 0.3);
-  outline: none;
-  border:none;
 }
+
 
 .page-footer-one {
   z-index: 3;
   position: absolute;
   bottom: 0;
 }
-
 
 .map {
   z-index: 2;
