@@ -246,14 +246,18 @@
  .footer-contacts {
      font-size: 21px;
      font-weight: 700;
-     padding-top: 23px;
-     text-align: center;
-     margin-left: 50px;
-}
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: center;
+     margin: 14px 0 0 70px;
+    }
  .footer-contacts p {
-     padding:0;
      margin: 0;
+     padding-top:9px; 
 }
+
 /*footer-social соц сети*/
  .footer-social ul {
      list-style: none;
@@ -310,6 +314,10 @@
      flex-wrap: wrap;
      justify-content: space-between;
 }
+ .figure-days label,
+ .figure-people label {
+     margin-top: 5px;
+ }
  .appointment-form input {
      font-size: 14px;
      line-height: 26px;
@@ -325,6 +333,7 @@
      display: flex;
      justify-content: space-between;
 }
+
  .figure-people {
      display: flex;
      justify-content: space-between;
@@ -374,16 +383,14 @@
      font-weight: 700;
      margin: 55px;
 }
-/* .window-metrics a {
-     position: relative;
-}
- .window-metrics a:focus {
-     outline: inherit;
-}
- */
- .window-metrics svg {
-     transform: translate(-31px,7px);
+.calendar {
+     transform: translate(315px,7px);
      position: absolute;
+ }
+ .calendar:focus {
+     box-shadow: 0 0 var(--basic-black) 2px;
+}
+ .window-metrics svg {
      color:var(--basic-grey-calm);
 }
  .window-metrics svg:hover path {
@@ -440,7 +447,6 @@
 /*страница 2 Внутренняя */
 /*filter-search*/
  .filter-search {
-     position: relative;
      color: var(--basic-white);
      background-image: url("../img/background.png");
      background-color: var(--basic-blue-dark);
@@ -453,12 +459,18 @@
  .price-controls {
      border: 2px solid var(--basic-white);
      border-radius: 2px;
-     height:36px;
-     width:317px;
-     display: flex;
-     flex-wrap: wrap;
-     align-items: center;
-     justify-content: space-around;
+     height:32px;
+     width:313px;
+}
+.price-controls input {
+     background-color: transparent;
+     color: var(--basic-white);
+     border:none;
+     outline: inherit;
+     width: 40px;
+     font-size: 14px;
+     line-height: 21px;
+     font-weight: 400;
 }
  .min-price::after {
      content:"";
@@ -756,8 +768,13 @@
      margin-left: 49px;
      margin-right: 49px;
 }
+ .feature-item-one-content h3,
  .feature-item-two-content h3{
-     text-align: center;
+     padding: 0 100px;
+     text-align: center; 
+}
+.feature-item-content h3 {
+     width: 160px;
 }
  .feature-item-two {
      display: flex;
@@ -767,8 +784,9 @@
  .feature-item-one-photo img{
      height: 100%;
 }
+
  .feature-item-two-photo img{
-     min-height: 100%;
+     height: 100%;
 }
  .feature-item-two-content{
      text-align: right;
@@ -779,11 +797,18 @@
      display: flex;
      flex-wrap: wrap;
      flex-direction: column;
-     text-align: center;
+}
+.application p {
+    padding: 0;
+    margin: 0;
+    line-height: 24px;
 }
  .application-title {
+     padding: 0;
+     margin: 0;
      text-transform: uppercase;
      margin-top: 58px;
+     margin-bottom: 33px;
      font-size: 30px;
      line-height: 24px;
      font-weight: 700;
@@ -791,6 +816,7 @@
  .main-footer .footer-container {
      display: grid;
      grid-template-columns: 1fr 1fr 1fr;
+     padding-bottom: 7px;
 }
  .footer-copyright{
      display: flex;
@@ -976,7 +1002,7 @@
 }
  .modal-application-box{
      position: absolute;
-     bottom: 199px;
+     bottom:204px;
      margin-left: 316px;
      margin-right: 316px;
      z-index: 4;
@@ -986,25 +1012,25 @@
      align-items: center;
      box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
 }
- .modal-application-title {
+ .modal-application-button {
      background-color: var(--basic-brown-light);
      width: 568px;
-}
- .modal-application-title:hover {
-     background-color:var(--basic-brown);
-     opacity: 1;
-}
- .modal-application-title h2:active {
-     background-color: var(--basic-brown-dark);
-     color: rgba(255, 255, 255, 0.3);
-}
- .modal-application h2 {
+     outline: inherit;
      font-size: 21px;
      line-height: 26px;
      font-weight: 700;
      padding: 30px 124px 30px 125px;
      color: var(--basic-white);
      margin: 0;
+}
+ .modal-application-button:hover {
+     background-color:var(--basic-brown);
+     opacity: 1;
+}
+ .modal-application-button:active,
+ .modal-application-button:focus {
+     background-color: var(--basic-brown-dark);
+     color: rgba(255, 255, 255, 0.3);
 }
  .modal-application-search {
      background-color: var(--basic-white);
@@ -1044,19 +1070,18 @@
  .map img {
      width: 100%;
 }
- .max-price input, .min-price input {
+ .price-controls input {
      background-color: transparent;
      color: var(--basic-white);
      border:none;
-     outline: none;
+     outline: inherit;
      width: 40px;
 }
- .max-price, .min-price {
+ .price-controls input {
      font-size: 14px;
      line-height: 21px;
      font-weight: 400;
      position: absolute;
-     transform: translate(-15px,-9px);
 }
  .feature-item p {
      margin-top: 0;
@@ -1068,10 +1093,6 @@
  .section-title {
      font-size: 21px;
      line-height: 21px;
-     align-self: center;
-     width: 160px;
-     justify-content: center;
-     padding: 0;
 }
  .feature-item h3 {
      margin-top: 47px;
