@@ -1072,11 +1072,11 @@
      width: 458px;
      outline: inherit;
 }
- .button-search:hover {
+ .button-search:hover, .button-search:focus {
      background-color:var(--basic-blue);
      opacity: 1;
 }
- .button-search:active, .button-search:focus {
+ .button-search:active {
      background-color:var(--basic-blue-dark);
      color: rgba(255, 255, 255, 0.3);
 }
