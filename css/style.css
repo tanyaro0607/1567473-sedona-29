@@ -123,9 +123,6 @@
 }
  .site-navigation a {
      color: var(--basic-black);
-}
- .site-navigation-item {
-     color: var(--basic-black);
      width: 300px;
 }
  .site-navigation-item a {
@@ -138,6 +135,9 @@
      color:var(--basic-black);
      opacity: 0.3;
 }
+.site-navigation-item-hotels a {
+     color: var(--basic-brown-light);
+}
  .site-navigation {
      list-style: none;
      display: flex;
@@ -146,17 +146,19 @@
 }
  .site-navigation-item-left {
      text-align: left;
+     width: 300px;
 }
  .site-navigation-item-right {
      text-align: right;
+     width: 300px;
 }
  .site-navigation-current a:not([href]) {
      background-color: var(--basic-white);
 }
- .site-navigation-item:last-child a {
+ .site-navigation-item-right:last-child a {
      padding-right: 72px;
 }
- .site-navigation-item:first-child a {
+ .site-navigation-item-left:first-child a {
      padding-left: 72px;
 }
 /*container main */
@@ -451,10 +453,13 @@
 }
  .filter-search {
      color: var(--basic-white);
-     background-image: url("../img/background.png");
-     background-color: var(--basic-blue-dark);
      width: 1200px;
-     min-height:217px;
+     min-height: 217px;
+     background:var(--basic-blue-dark) url("../img/background.png");
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
 }
  .filter-list {
      list-style: none;
@@ -516,7 +521,7 @@
  .range-controls .bar {
      width: 255px;
      height: 2px;
-     background:var(--basic-white);
+     color:var(--basic-white);
      opacity: 1;
     /*почему шкала не становится яркой, как сделать?*/
      position: absolute;
@@ -713,6 +718,7 @@
      font-weight: 700;
      padding:0;
      margin: 0;
+     width: 240px;
 }
  .hotel-name {
      list-style: none;
@@ -724,8 +730,7 @@
      color: var(--basic-blue-light);
 }
  .hotel-name:active {
-     color:var(--basic-black);
-     opacity: 0.3;
+     color:rgba(0, 0, 0, 0.3)
 }
 /* Grid Сетка на гридах*/
  .page {
@@ -812,18 +817,18 @@
      display: flex;
      flex-wrap: wrap;
      flex-direction: column;
+     justify-content: flex-start;
+     align-items: center;
 }
 .application p {
-    padding: 0;
-    margin: 0;
+    padding:0 0 130px 0;
+    margin:31px 0 0 0;
     line-height: 24px;
 }
  .application-title {
      padding: 0;
-     margin: 0;
      text-transform: uppercase;
-     margin-top: 58px;
-     margin-bottom: 33px;
+     margin: 55px 0 0 0;
      font-size: 30px;
      line-height: 24px;
      font-weight: 700;
