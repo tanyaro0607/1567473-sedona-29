@@ -326,6 +326,10 @@
      font-weight: 700;
      text-transform:uppercase;
 }
+.appointment-form{
+     padding: 55px;
+}
+
  .window-metrics{
      background: var(--brown-ultra-light);
      width: 346px;
@@ -335,28 +339,42 @@
      display: flex;
      justify-content: space-between;
 }
-
  .figure-people {
      display: flex;
-     justify-content: space-between;
 }
- .figure-person{
+.figure-adults{
+     display: flex;
+     justify-content: flex-start;
+     width: 50%;
+}
+.figure-children {
+     display: flex;
+     justify-content: flex-end;
+     width: 50%;
+}
+.figure-adults label {
+     padding-right: 40px;
+}
+.figure-children label {
+     padding-right: 27px;
+}
+.figure-person{
      background: var(--brown-ultra-light);
      width: 114px;
      height: 38px;
-}
+     display: flex;
+     align-items: center;
+} 
  .figure-person input {
-     width: 114px;
-     height: 38px;
      text-align: center;
      border:none;
      background-color: transparent;
-     border:none;
-     outline: none;
-}
- .figure-person:not(:last-child):{
+     outline: inherit; 
+     flex-grow: 1;
+} 
+/*.figure-person:not(:last-child):{
      margin-right: 53px;
-}
+} */
  .window-metrics input {
      color:var(--basic-black);
      text-align: left;
@@ -383,7 +401,6 @@
      font-size: 14px;
      line-height: 26px;
      font-weight: 700;
-     margin: 55px;
 }
 .calendar {
      transform: translate(315px,7px);
@@ -402,17 +419,16 @@
      fill: var(--basic-blue-light);
 }
  .enlarge {
-     border:none;
-     position: absolute;
+     border: none;
+     width: 12px;
+     padding: 0;
+     margin: 0 13px;
+}
+.enlarge-minus {
+     padding-bottom: 5px;
 }
  .enlarge :focus{
      outline: inherit;
-}
- .enlarge-plus{
-     transform: translate(25px,-28px);
-}
- .enlarge-minus{
-     transform: translate(8px,7px);
 }
  .enlarge svg {
      color:var(--basic-grey-calm);
@@ -420,7 +436,7 @@
  .enlarge svg:hover path {
      fill:var(--basic-black);
 }
- .enlargesvg:active path {
+ .enlarge svg:active path {
      fill: var(--basic-blue-light);
 }
  .enlarge svg:hover rect {
@@ -718,7 +734,6 @@
      font-weight: 700;
      padding:0;
      margin: 0;
-     width: 240px;
 }
  .hotel-name {
      list-style: none;
@@ -731,6 +746,9 @@
 }
  .hotel-name:active {
      color:rgba(0, 0, 0, 0.3)
+}
+.hotel-info{
+     flex-grow: 1;
 }
 /* Grid Сетка на гридах*/
  .page {
@@ -984,18 +1002,18 @@
      padding: 23px 72px;
      margin: 0;
      display: flex;
-     flex-wrap: wrap;
      border-bottom: 1px solid var(--basic-grey-lighten);
 }
  .hotel-photo {
      margin-top: 7px;
      margin-right: 29px;
      padding: 0;
-     order: -2;
+     min-width: 135px;
 }
  .hotel-prestige {
      padding: 0;
      margin-left: auto;
+     min-width: 110px;
 }
  .stars {
      display: flex;
@@ -1062,7 +1080,6 @@
  .modal-application-search {
      background-color: var(--basic-white);
      width: 568px;
-     height: 395px;
 }
  .button-search {
      font-size: 21px;
