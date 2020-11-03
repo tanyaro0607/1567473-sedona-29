@@ -5,7 +5,8 @@
       <title>HTML Academy: Седона</title>
       <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
       <link href="css/normalize.css" rel="stylesheet">
-      <link href="css/style.css" rel="stylesheet">
+      <link href="css/style.min.css" rel="stylesheet">
+      <!--<link href="style.min.css" rel="stylesheet">-->
    </head>
    <body class="page-body">
       <div class="page-body-wrapper">
@@ -14,16 +15,12 @@
                <a href="#" class="main-header-logo" aria-label="Логотип туристического города Седона">
                <img src="img/logo.svg" width="138" height="70" alt="Логотип туристического города Седона">
                </a>
-               <div class="main-header-bar">
-                  <div class="main-navigation-wrapper">
-                     <ul class="site-navigation">
-                        <li class="site-navigation-item site-navigation-item-left"> <a href="#"> Информация </a></li>
-                        <li class="site-navigation-item site-navigation-item-left"> <a href="#"> Фото и видео </a></li>
-                        <li class="site-navigation-item site-navigation-item-right"> <a href="#"> Карта штата </a></li>
-                        <li class="site-navigation-item site-navigation-item-right"> <a href="hotels.html"> Гостиницы </a></li>
-                     </ul>
-                  </div>
-               </div>
+               <ul class="site-navigation">
+                  <li class="site-navigation-item site-navigation-item-left"> <a href="#"> Информация </a></li>
+                  <li class="site-navigation-item site-navigation-item-left"> <a href="#"> Фото и видео </a></li>
+                  <li class="site-navigation-item site-navigation-item-right"> <a href="#"> Карта штата </a></li>
+                  <li class="site-navigation-item site-navigation-item-right"> <a href="hotels.html"> Гостиницы </a></li>
+               </ul>
             </nav>
          </header>
          <main class="page-index container">
@@ -31,8 +28,6 @@
             <section class="image">
                <h2 class="visually-hidden"> Баннер г. Седона </h2>
                <img class="background-banner" src="img/sedonaview.jpg" width="1200" height="509" alt="Баннер г. Седона">
-               <img class="background-text" src="img/welcome.png" width="457" height="351" alt=""> 
-               <img class="image-line" src="img/Shape.png" width="1200" height="57" alt=""> 
             </section>
             <section class="subtitle">
                <h2 class="subtitle-title"> Седона &mdash; небольшой городок в Аризоне, заслуживающий большего! </h2>
@@ -52,19 +47,16 @@
                      </div>
                      <ul class="tourism-list">
                         <li class="tourism-item">
-                           <div><img src="img/icon-house.svg" width="75" height="72" alt=""></div>
-                           <h3 class="section-title"> Жилье </h3>
+                           <h3 class="section-title section-title-house"> Жильё </h3>
                            <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
                         </li>
                         <li class="tourism-item">
-                           <div><img src="img/icon-food.svg" width="75" height="70" alt=""></div>
-                           <h3 class="section-title"> Еда </h3>
+                           <h3 class="section-title section-title-food"> Еда </h3>
                            <p>Всегда заказывайте фирменный бургер, Вы не разочаруетесь!</p>
                         </li>
                         <li class="tourism-item">
-                           <div><img src="img/icon-souvenirs.svg" width="64" height="77" alt=""></div>
-                           <h3 class="section-title"> Сувениры</h3>
-                           <p>Не только китайского, но и местного производтсва!</p>
+                           <h3 class="section-title section-title-souvenirs"> Сувениры</h3>
+                           <p>Не только китайского, но и местного производства!</p>
                         </li>
                      </ul>
                   </li>
@@ -131,38 +123,38 @@
                            </div>
                         </div>
                         <div class="figure-people">
-                           <div class="figure-adults"> 
-                           <label for="quantity-adults">Взрослые:</label>
-                           <div class="figure-person">
-                              <button class="enlarge enlarge-minus" aria-label="Уменьшить количество">
-                                 <svg width="12" height="3" viewBox="0 0 12 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="12" height="3" fill="#A9A9A9"/>
-                                 </svg>
-                              </button>
-                              <input id="quantity-adults" type="number" min="1" max="10" step="1" value="2">
-                              <button class="enlarge enlarge-plus" aria-label="Увеличить количество">
-                                 <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.23086 6.76932V11H6.76932V6.76932H11V4.23086H6.76932V0H4.23085V4.23086H0V6.76932H4.23086Z" fill="#A9A9A9"/>
-                                 </svg>
-                              </button>
+                           <div class="figure-adults">
+                              <label for="quantity-adults">Взрослые:</label>
+                              <div class="figure-person">
+                                 <button class="enlarge enlarge-minus" type="button" aria-label="Уменьшить количество">
+                                    <svg width="12" height="3" viewBox="0 0 12 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <rect width="12" height="3" fill="#A9A9A9"/>
+                                    </svg>
+                                 </button>
+                                 <input id="quantity-adults" type="number" name="adults" min="1" max="10" step="1" value="2">
+                                 <button class="enlarge enlarge-plus" type="button" aria-label="Увеличить количество">
+                                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path fill-rule="evenodd" clip-rule="evenodd" d="M4.23086 6.76932V11H6.76932V6.76932H11V4.23086H6.76932V0H4.23085V4.23086H0V6.76932H4.23086Z" fill="#A9A9A9"/>
+                                    </svg>
+                                 </button>
+                              </div>
                            </div>
-                        </div>
-                        <div class="figure-children">
-                           <label for="quantity-children">Дети:</label>
-                           <div class="figure-person">
-                              <button class="enlarge enlarge-minus" aria-label="Уменьшить количество">
-                                 <svg width="12" height="3" viewBox="0 0 12 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="12" height="3" fill="#A9A9A9"/>
-                                 </svg>
-                              </button>
-                              <input id="quantity-children" type="number" min="0" max="10" step="1" value="0">
-                              <button class="enlarge enlarge-plus" aria-label="Увеличить количество">
-                                 <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.23086 6.76932V11H6.76932V6.76932H11V4.23086H6.76932V0H4.23085V4.23086H0V6.76932H4.23086Z" fill="#A9A9A9"/>
-                                 </svg>
-                              </button>
+                           <div class="figure-children">
+                              <label for="quantity-children">Дети:</label>
+                              <div class="figure-person">
+                                 <button class="enlarge enlarge-minus" type="button" aria-label="Уменьшить количество">
+                                    <svg width="12" height="3" viewBox="0 0 12 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <rect width="12" height="3" fill="#A9A9A9"/>
+                                    </svg>
+                                 </button>
+                                 <input id="quantity-children" name="children" type="number" min="0" max="10" step="1" value="0">
+                                 <button class="enlarge enlarge-plus" type="button" aria-label="Увеличить количество">
+                                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path fill-rule="evenodd" clip-rule="evenodd" d="M4.23086 6.76932V11H6.76932V6.76932H11V4.23086H6.76932V0H4.23085V4.23086H0V6.76932H4.23086Z" fill="#A9A9A9"/>
+                                    </svg>
+                                 </button>
+                              </div>
                            </div>
-                        </div>
                         </div>
                         <div class="modal-search">
                            <button class="button-search button" type="submit">Найти</button>
@@ -181,7 +173,7 @@
                <section class="footer-contacts">
                   <h2 class="visually-hidden"> Наши контакты </h2>
                   <p>#VISITSEDONA</p>
-                  <p> тел: <a class="contacts-phone" href="tel:+7(495)666-01-66">+7(495) 666-01-66</a></p>
+                  <p> тел: <a class="contacts-phone" href="tel:+74956660166">+7(495) 666-01-66</a></p>
                </section>
                <section class="footer-social">
                   <h2 class="visually-hidden"> Мы с соц. сетях </h2>
