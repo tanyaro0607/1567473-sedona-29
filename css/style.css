@@ -99,7 +99,7 @@
 }
  .image::after {
      content: "";
-     background: url("../img/shape.png") no-repeat;
+     background: url("../img/border-limit.png") no-repeat;
      width: 1200px;
      height: 57px;
      position: absolute;
