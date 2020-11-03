@@ -210,7 +210,7 @@
 }
  .section-title-house::before {
      content: "";
-     background: url("../img/icon-house.svg") no-repeat;
+     background: url("../img/iconhouse.svg") no-repeat;
      width: 75px;
      height: 72px;
      display: block;
@@ -218,7 +218,7 @@
 }
  .section-title-food::before{
      content: "";
-     background: url("../img/icon-food.svg") no-repeat;
+     background: url("../img/iconfood.svg") no-repeat;
      width: 75px;
      height: 70px;
      display: block;
@@ -226,7 +226,7 @@
 }
  .section-title-souvenirs::before{
      content: "";
-     background: url("../img/icon-souvenirs.svg") no-repeat;
+     background: url("../img/iconsouvenirs.svg") no-repeat;
      width: 64px;
      height: 77px;
      display: block;
