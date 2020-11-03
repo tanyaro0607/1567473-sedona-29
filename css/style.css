@@ -80,19 +80,22 @@
      position: absolute;
      z-index: 4;
 }
- .background-banner {
-     position: relative;
-     z-index: 2;
-}
  .image {
      display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: center;
      position: relative;
+     background: url("../img/sedonaview.jpg") no-repeat;
+     width: 1200px;
+     height: 509px;
+}
+ .image::before {
+     content: "";
      background: url("../img/welcome.png") no-repeat;
-     background-size: 457px 351px;
-     z-index: 3;
+     width: 457px;
+     height: 351px;
+     position: relative;
 }
  .image::after {
      content: "";
@@ -101,7 +104,6 @@
      height: 57px;
      position: absolute;
      bottom: 0;
-     z-index: 3;
 }
 /*Main-navigation*/
  .main-navigation {
@@ -124,6 +126,9 @@
      color: var(--basic-black);
      width: 300px;
 }
+ .site-navigation-item {
+     padding: 14px 0;
+}
  .site-navigation-item a {
      text-decoration:none;
 }
@@ -137,11 +142,15 @@
  .site-navigation-item-hotels a {
      color: var(--basic-brown-light);
 }
+ .site-navigation-item-hotels {
+     padding: 14px 0;
+}
  .site-navigation {
      list-style: none;
      display: flex;
      flex-wrap: wrap;
      padding: 0;
+     margin: 0;
 }
  .site-navigation-item-left {
      text-align: left;
@@ -154,10 +163,10 @@
  .site-navigation-current a:not([href]) {
      background-color: var(--basic-white);
 }
- .site-navigation-item-right:last-child a {
+ .site-navigation-item-right:nth-child(even) a {
      padding-right: 72px;
 }
- .site-navigation-item-left:first-child a {
+ .site-navigation-item-left:nth-child(odd) a {
      padding-left: 72px;
 }
 /*container main */
@@ -1156,3 +1165,4 @@
  .main-header, .container, .main-footer {
      background-color: var(--basic-white);
 }
+ 
