@@ -393,6 +393,7 @@
      width: 114px;
      height: 38px;
      display: flex;
+     justify-content: space-between;
      align-items: center;
 }
  .figure-person input {
@@ -422,7 +423,6 @@
 }
  .window-metrics input:focus, .figure-people input:focus {
      background-color: var(--basic-white);
-     outline: inherit;
      outline: 2px solid var(--basic-grey-lighten);
      outline-offset:-2px;
 }
@@ -449,15 +449,17 @@
 }
  .enlarge {
      border: none;
-     width: 12px;
+     width: 38px;
+     height: 100%;
      padding: 0;
-     margin: 0 13px;
+     margin: 0;
 }
  .enlarge-minus {
      padding-bottom: 5px;
 }
- .enlarge :focus{
-     outline: inherit;
+ .enlarge:focus{
+     outline: 2px solid var(--basic-black);
+     outline-offset:-2px;
 }
  .enlarge svg {
      color:var(--basic-grey-calm);
@@ -468,7 +470,7 @@
  .enlarge svg:active path {
      fill: var(--basic-blue-light);
 }
- .enlarge svg:hover rect {
+ .enlarge svg:hover rect, .enlarge svg:focus rect {
      fill:var(--basic-black);
 }
  .enlarge svg:active rect {
@@ -716,8 +718,10 @@
  a.hotel-link {
      font-size: 14px;
      line-height: 21px;
-     font-weight: 400;
+     font-weight: 700;
+     text-align: center;
      padding: 3px 17px 3px 16px;
+     color: var(--basic-white);
 }
  .hotel-link-details {
      background-color: var(--basic-blue-light);
@@ -746,14 +750,6 @@
      color: var(--basic-grey);
      text-transform: uppercase;
      padding: 3px 12px 3px 15px;
-     margin: 0;
-}
- .hotel a, .total-search a {
-     color: var(--basic-black);
-}
- .total-search .hotel {
-     list-style: none;
-     padding: 0;
      margin: 0;
 }
 /*hotel-name*/
@@ -1051,13 +1047,6 @@
  .stars li:not(:last-child) {
      padding-right: 6px;
 }
- a.hotel-link {
-     color: var(--basic-white);
-     font-size: 14px;
-     line-height: 21px;
-     font-weight: 700;
-     text-align: center;
-}
  .hotel-type, .hotel-booking {
      display: flex;
      flex-wrap: wrap;
@@ -1165,4 +1154,4 @@
  .main-header, .container, .main-footer {
      background-color: var(--basic-white);
 }
- 
+
